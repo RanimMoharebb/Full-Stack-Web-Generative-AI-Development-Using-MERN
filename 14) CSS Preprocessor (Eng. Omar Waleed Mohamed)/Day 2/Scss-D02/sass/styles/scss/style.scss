@@ -1,0 +1,288 @@
+// functions => return value
+// @function peekTheme($t: "dark") {
+//   @if ($t == "dark") {
+//     @return black;
+//   } @else if($t == "light") {
+//     @return white;
+//   }
+// }
+// .p {
+//   background-color: peekTheme("light");
+// }
+// @debug "hello";
+// $var: red;
+// @debug $var;
+// @use "sass:math";
+// @use "sass:list";
+// @use "sass:color";
+// @debug math.max(2px, 5px);
+// $listd: 1px 50px 200px;
+// list.append((1px , 2px) , 50px , $separator: space)
+// @debug list.index($listd, 200px);
+// .p {
+//   padding: list.index($listd, 200px) * 1px;
+// }
+// @debug list.append((1px, 2px), 50px);
+// @debug list.set-nth(10px 20px 30px, -1, 2em); // 2em 20px 30px
+// .p {
+//   //   background-color: color.alpha(rgba(255, 0, 0, 0.585));
+//   //   background-color: color.adjust(red, $blackness: 50%);
+// }
+
+// mixins => do real function job in css
+// => function to return style
+// => doesnt return anything
+// @include
+// if u didnt include => it will not be compiled
+
+// @mixin btnStyle($color: yellow) {
+//   background-color: $color;
+//   color: white;
+//   border: none;
+//   transition: all 0.5s;
+//   width: 150px;
+//   height: 100px;
+//   &:hover {
+//     background-color: black;
+//   }
+// }
+// .btn {
+//   @include btnStyle(green);
+//   @include btnStyle();
+// }
+
+// .btn2 {
+//   @include btnStyle(blue);
+//   // @extend .btn;
+// }
+
+// @mixin btnStyle($color: yellow) {
+//   &-span {
+//     background-color: $color;
+//     color: white;
+//     border: none;
+//     transition: all 0.5s;
+//     width: 150px;
+//     height: 100px;
+//     &:hover {
+//       background-color: black;
+//     }
+//   }
+//   .btn {
+//     background-color: $color;
+//     color: white;
+//     border: none;
+//     transition: all 0.5s;
+//     width: 150px;
+//     height: 100px;
+//     &:hover {
+//       background-color: black;
+//     }
+//   }
+// }
+// .btn {
+//   background-color: black;
+//   @include btnStyle();
+// }
+// @include btnStyle();
+// @mixin cols($num: 12) {
+//   @for $i from 1 through $num {
+//     .col-#{$i} {
+//       width: 100% / 12 * $i;
+//     }
+//   }
+// }
+// @include cols(5);
+// .d1 {
+//   background-color: blue;
+// }
+// css way
+// @media (min-width: 500px) {
+//   .d1 {
+//     background-color: red;
+//   }
+//   .d2 {
+//     background-color: rgb(123, 255, 0);
+//   }
+// }
+// @media (min-width: 700px) {
+//   .d1 {
+//     background-color: red;
+//   }
+// }
+// @media (min-width: 800px) {
+//   .d1 {
+//     background-color: red;
+//   }
+// }
+// sass way
+// .d1 {
+//   background-color: yellow;
+//   @media (min-width: 500px) {
+//     background-color: red;
+//   }
+//   @media (min-width: 800px) {
+//     background-color: red;
+//   }
+// }
+// .d2 {
+//   background-color: rgb(255, 0, 149);
+//   @media (min-width: 500px) {
+//     background-color: red;
+//   }
+//   @media (min-width: 800px) {
+//     background-color: red;
+//   }
+// }
+// container
+// items
+// breakpoints
+// .con {
+//   display: flex;
+//   flex-wrap: wrap;
+// }
+// $screenName: (sm, md, lg, xl);
+// $breakpoints: 574px, 774px, 990px, 1024px;
+// $map: (
+//   sm: 574px,
+//   md: 774px,
+//   lg: 990px,
+//   xl: 1024px,
+// );
+// @if ($screenName == "") {
+//   @for $i from 1 through 12 {
+//     .col-#{$i} {
+//       width: 100% / 12 * $i;
+//     }
+//   }
+// } @else {
+//   @for $i from 1 through length($breakpoints) {
+//   @each $key, $value in $map {
+// @media (min-width: nth($breakpoints , $i)) {
+//   @for $j from 1 through 12 {
+//     .col-#{nth($screenName , $i)}-#{$j} {
+//       width: 100% / 12 * $j;
+//     }
+//   }
+// }
+//     @media (min-width: $value) {
+//       @for $j from 1 through 12 {
+//         .col-#{$key}-#{$j} {
+//           width: 100% / 12 * $j;
+//         }
+//       }
+//     }
+//   }
+// }
+// @mixin gridSystem($screen: "", $breakpoint: "", $cols: 12) {
+//   .con {
+//     display: flex;
+//     flex-wrap: wrap;
+//   }
+//   @if ($screen == "") {
+//     @for $i from 1 through $cols {
+//       .col-#{$i} {
+//         width: 100% / 12 * $i;
+//       }
+//     }
+//   } @else {
+//     //   @for $i from 1 through length($breakpoints) {
+//     // @each $key, $value in $map {
+//     // @media (min-width: nth($breakpoints , $i)) {
+//     //   @for $j from 1 through 12 {
+//     //     .col-#{nth($screenName , $i)}-#{$j} {
+//     //       width: 100% / 12 * $j;
+//     //     }
+//     //   }
+//     // }
+//     @media (min-width: $breakpoint) {
+//       @for $j from 1 through $cols {
+//         .col-#{$screen}-#{$j} {
+//           width: 100% / 12 * $j;
+//         }
+//       }
+//     }
+//   }
+//   //   }
+// }
+// @include gridSystem(sm, 500px , 2);
+// @mixin gridSystem() {
+//   $map: (
+//     sm: 574px,
+//     md: 774px,
+//     lg: 990px,
+//     xl: 1024px,
+//   );
+//   .con {
+//     display: flex;
+//     flex-wrap: wrap;
+//   }
+
+//   @for $i from 1 through 12 {
+//     .col-#{$i} {
+//       width: 100% / 12 * $i;
+//     }
+//   }
+//   @each $key, $value in $map {
+//     @media (min-width: $value) {
+//       @for $j from 1 through 12 {
+//         .col-#{$key}-#{$j} {
+//           width: 100% / 12 * $j;
+//         }
+//       }
+//     }
+//   }
+// }
+// @include gridSystem();
+// $danger: blue;
+// @import "abstracts/variables";
+// .p {
+//   background-color: $danger;
+// }
+
+// @mixin test() {
+//   //   background-color: red;
+//   //   .p {
+//   //     background-color: red;
+//   //   }
+//   .p {
+//     background-color: blue;
+//   }
+//   .h1 {
+//     width: 200px;
+//     @content;
+//   }
+// }
+
+// @include test() {
+//   background-color: red;
+// }
+
+// @include test() {
+//   background-color: green;
+//   color: red;
+//   width: 100px;
+//   .f {
+//     background-color: aqua;
+//   }
+// }
+// .p {
+//   @include test();
+// }
+
+// $primary: red;
+// @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+// .p {
+//   background-color: red;
+// }
+// @debug $pinks;
+// @each $key, $value in $pinks {
+//   .bg-#{$key} {
+//     background-color: $value;
+//   }
+// }
+// @each $key, $value in $blues {
+//   .bg-#{$key} {
+//     background-color: $value;
+//   }
+// }

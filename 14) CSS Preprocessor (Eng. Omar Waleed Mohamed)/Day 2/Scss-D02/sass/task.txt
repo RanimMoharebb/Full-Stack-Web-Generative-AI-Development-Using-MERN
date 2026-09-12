@@ -1,0 +1,2 @@
+1- grid system using SCSS
+2- Customize bootstrap colors

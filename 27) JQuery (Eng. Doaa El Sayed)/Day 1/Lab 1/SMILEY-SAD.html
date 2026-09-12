@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+<img id="face" src="smiley.png" width="120">
+
+<script>
+$(document).ready(function () {
+
+    $("#face").mouseenter(function () {
+        $(this).attr("src", "sad.png").on("error", function () {
+            alert("Image not found");
+        });
+    });
+
+    $("#face").mouseleave(function () {
+        $(this).attr("src", "smiley.png");
+    });
+
+});
+</script>
+
+</body>
+</html>

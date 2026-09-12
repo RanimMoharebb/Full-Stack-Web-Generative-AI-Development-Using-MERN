@@ -1,0 +1,377 @@
+<!-- 
+we do not have to remeber all the tages, 
+we can use sites as :-
+1- mdn
+2- W3schools 
+-->
+
+
+<!-- 
+HTML Anatomy :-
+- Doctype
+- Html
+    - head
+        - <title> -> text appears in the bar in chrome tab
+        - <meta name="" content=""/> -> btsa3d elnas ywslo lel site bta3y
+        - <script> -> converting from HTML to another language (java script code is inside here)
+        - <link> -> by7ot image gamb title
+        - <base href="images"> -> esm el folder ely dyman ybd2 yshof el image path mn 3ndo
+        - <style> -> css code
+    - body 
+-->
+<!-- 
+Types of orders :-
+    1- tages 
+    2- &...
+-->
+
+<!-- 
+Types of Tags :-
+Block element -> ?
+inline element -> ?
+self closed -> ?
+-->
+<!-- doctype tage -> used to tell he browzer the version of HTML used-->
+<doctype>
+
+<!-- any document should contains the followiing tags structure-->
+<html>
+    <head> Content here will not apear in the page  </head>
+    <body> Content here will apear in the page  </body>
+</html>
+
+
+<!------------------------------------------------------------------->
+<!-- 
+body tag is divided into 8 blocks :-
+1- Headings -> responsible for headers or titles :-
+    a- h1 (lardest) 
+    b- h2
+    c- h3
+    d- h4
+    e- h5
+    f- h6 (smallest)
+2- Text formating :- 
+    a- size (from 1 to 7) 
+    b- formatting 
+    - color="red" or using Hexa -> color="#ff0000" -> red,green,blue
+    - face="arial" -> Typeface (font type)
+    - <b> <b/> -> Bold
+    - <i> <i/> -> italic
+    - <u> <u/> -> Underline
+    c- layout (text alignment)
+    - <center> ... <center/> ->
+    the following tages just makes new line and will not make it center aligned
+    - <div> ... <div/> -> BLOCK ELEMENTS
+    - <span> ... <span/> -> INLINE ELEMENTS
+    - <p> ... <p/> (paragraph) -> BLOCK ELEMENTS -> leace  bigger space as div
+    d- breaking line & separators :-
+    - <pre> will output the same spaces and the tabs  <pre/>
+    - <br/> -> break (enter a new line) (self close -> has no closing tage)
+    - <hr/> -> horizontal line (make horizontal line)
+    - &nbsp -> non breakable space) (normal space is breakable space (lw el text twel 3alael page bynzl new line) )
+    e- whitespaces & special characters
+3- Lists
+    a- <ul> -> unordered list -> types are -> (circle,square,..)
+    b- <ol> -> ordered list -> types are -> (standerd without writing,a,A,i)
+    c- <dl> -> defination list -> <dt> ?? , <dd> ??
+    d- <li> -> list item
+4- Links (<a> & href="...")
+    - linking to external file :-
+        - using URL -> page from internet
+        - using paths -> page from my device which i already have created
+            - absolute path -> take the file location in the laptop + / + file name (index.html)
+            - relative path -> write the path starting from the current loaction
+                - href="index.html" -> ONLY write the page name (if all pages are stored in the same folder)
+                - href="test/index.html"-> means will startv from the current location 
+                - href="/test/index.html" -> / means will go back 
+                - href="../test/index..html" -> will go back step 2 times
+                - compare betwwen -> / & ./ & ../ & ../../  ????
+    - linking to section in the same page (anchor) :- 
+        1) put name to the section -> <a name="abc"> ... <a/>
+        2) write the section name inside the href but start with # 
+        3) address will be -> same location + /#abc
+    - linking to section in another page (anchor) :-
+        do same steps but inside href="test/index.html#abc"
+    - linking to an email
+        - href="mailto:ranimmohareb650@gmail.com?subject=...&body=..."
+5- images
+    - <img src="..." -> same concept as inide href
+    - width="100px" -> if i edit only height or width el ??ratio mtzbta
+    - hight="50px"
+    - alt="..." -> text will apear if the image is not working + if the cursor pionted to the image the alt will apear 7ata lw el image sh8ala 
+    - align=""
+    - to make the image itself the link :- (there is 2 ways)
+        - same steps as we do in link but put the image code instead of text (click here)
+        - write the image code and the map code then connect both :- (called image map)
+            - <map name="MyMap"> -> 
+            - <area shape="circle" coords"..."/> -> circle, rectangle, square, ...
+            - <area shape="rectangle" coords"..."/> -> ??
+            - <area shape="polygon" coords"..."/> -> ??
+            - <area href="..."/>
+            -  then in the image write -> usemap=#MyMap
+
+6- Objects (ex: videos, maps, plugins)
+    - <iframe width="400" height="400" scrolling="yes or no" scr="...." frameorder="5" allow="autoplay; encrypted-media" allowfullscreen/> -> by3mly shashet 3ard w mmkn a7ot gwaha ay 7aga
+    - if we opened any youtube video and click share them embedd -> the html code for iframe will appear to us
+7- Tables
+    a- structure (should write each row inside <tr> tags)
+        - caption -> <caption> -> optional w lw mktbthash msh hy7sl 7aga
+        - header -> <thead>
+            - <th> -> blod and bigger
+            - <td>) -> smaller
+            - <th width="50%"> -> will take 50% from the row width stored inside table tage
+        - body -> <tbody> 
+        - footer -> <tfoot> 
+    b- formatting
+        - merge :-
+            - <th rowspan="2"> -> means that it will merge 2 rows
+            - <th colspan="2"> -> means that it will merge 2 column
+        - change :- 
+                - font -> <th> <font color="" > <font/> <th/>
+                - background color -> <td bgcolor=""> <td/> or inside table tage
+                - style 
+                - spacing -> inside table tage -> cellpadding="10px"
+                - alignment -> <td align=""> <td/> (we have -> align and valign)
+                - border  
+                - padding -> inside table tage -> cellpadding="10px"
+    c- data
+8- Form :- 
+    input types :-
+        - textbox
+        - password
+        - hidden -> mmkn adeha name=x and make value=5
+        - checkbox
+        - radio button -> choose ection 1 or 2 (make name="" the same in both section 1 radio and section 2 radio)
+        - button
+        - submit
+        - reset
+        - image button
+        - text area -> <textarea cols="" rows=""> <textarea/>
+        - dropdown list
+        - file loader
+        - options :-
+            <select size="" multiple> 
+                <option> ... <option/>
+                <option> ... <option/>
+            <select/>  
+    tages :-
+        - <input> <input/>
+        - <textarea> <textarea/>
+        - <select> <select/>
+        - <option> <option/>          
+    attributes :-
+        - id="" -> can not be repeated
+        - name="" -> can be repeated
+        - value ="" -> default value if the user did not enter a value
+    9- body attributes :-
+        - link -> link color
+        - alink -> active link -> lma el cursorygy 3leha btb2a b color kaza
+        - vlink -> ???
+        - Bgcolor -> btakhol el url le image w tkhleh el background w ytkarr kter
+        - backgroung
+-->
+
+<!-- example for headings-->
+ <html>
+    <head> </head>
+    <body>
+        <h1>
+            Here is the way we write the tags together (with tabs)
+        </h1>
+    </body>
+ </html>
+
+<!-- example for text formating-->
+<html>
+    <head> </head>
+    <body>
+        <font size="4" color="red" face="arial">  
+                <b> 
+                    <i>
+                        <u>
+                            Here is the text 
+                        </u>
+                    </i>
+                </b>
+        </font>
+    </body>
+ </html>
+<!-- if we replaces the ending tage of <u> with the ending tage pf <i> -> that is wrong but it will work -->
+
+
+<!-- example for alignmemnt (p or div) -> can seperate the text then make it centered-->
+<html>
+    <head> </head>
+    <body>
+        Ranim
+        <p align="center">
+            Mohareb
+        </p>
+        Ramadan
+    </body>
+</html>
+
+<!-- example for alignmemnt (span) -> will not do anything as it can not sepperate the text-->
+<html>
+    <head> </head>
+    <body>
+        Ranim
+        <span align="center">
+            Moahreb
+        </span>
+        Ramadan
+    </body>
+</html>
+
+<!-- example for list-->
+<html>
+    <head> </head>
+    <body>
+        <ul type="circle">
+            Moahreb
+        </ul>
+    </body>
+</html>
+
+<html>
+    <head> </head>
+    <body>
+        <dl>
+            <dt> car </dt>
+            <dd> car has 4 wheels</dd>
+        </dl>
+    </body>
+</html>
+
+<!-- example for link (file) -->
+<html>
+    <head> </head>
+    <body> 
+        <a href="https://www.google.com">
+            click here 
+        </a>
+    </body>
+</html>
+<html>
+    <head> </head>
+    <body> 
+        <a href="https://www.google.com">
+            click here 
+        </a>
+    </body>
+</html>
+
+<!-- example for link (file) -->
+<html>
+    <head> </head>
+    <body> 
+        <a href="#abc">
+            click here 
+        </a>
+        <a name="abc">
+            ...
+        </a>
+    </body>
+</html>
+
+<!-- example for image-->
+ <html>
+    <head> </head>
+    <body> 
+        <img
+        src="..." height="100px" width="100px" alt="..." align="right"
+        />
+    </body>
+</html>
+ <html>
+    <head> </head>
+    <body> 
+        <img
+            src="..." height="100px" width="100px" alt="..." align="right"
+            usemap="#MyMap"
+        />
+        <map>
+            <area shape="..." coords="35,35,35" href="..."/>
+        </map>
+    </body>
+</html>
+<!-- example for text object-->
+
+
+<!-- example for text table-->
+</html>
+<html>
+    <head> </head>
+    <body> 
+        <table width="300px" border="2px">   
+            <caption> ... </caption>
+            
+            <thead> 
+                <th> id </th>
+                <th> name </th>
+                <th> grade </th>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <th> 7771 </th>
+                    <th> Ranim </th>
+                    <th> 99 </th>                
+                </tr>
+            </tbody>
+            
+            <tfoot>
+                <tr>
+                    <th> ... </th>
+                    <th> ... </th>
+                    <th> ... </th>                
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+</html>
+
+<!-- example for text form -->
+<html>
+    <head> </head>
+    <body> 
+       name <input type="..." id="..." name="..."> 
+    </body>
+</html>
+
+<!-- example for body attributes -->
+ <html>
+    <head> </head>
+    <body bgColor="..." background="..." > 
+    </body>
+</html>
+
+<!-- example for head section -->
+
+
+<!------------------------------------------------------------------->
+<!-- 
+Printing some characters :-
+    1- (<) -> &lt (less than) 
+    2- (>) -> &gt (greater than)
+    3- -> space
+    4- <hr/> -> horizontal line
+-->
+
+
+
+
+
+<!------------------------------------------------------------------->
+
+<!-- 
+select the text -> shift + " -> will make it around the text 
+-->
+
+
+<!-- 
+Not written Data in Latex Code :-
+<p> <p/> = paragraph
+difference between <span> and <div>
+-->

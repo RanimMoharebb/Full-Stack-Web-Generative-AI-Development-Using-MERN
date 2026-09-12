@@ -1,0 +1,203 @@
+/* Base */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #e0f7fa, #fff9c4);
+    margin: 0;
+    padding: 30px 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    background: #ffffffee;
+    padding: 25px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #00796b;
+    margin-bottom: 25px;
+    font-size: 32px;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.controls input[type="text"], 
+.controls select {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    transition: all 0.2s ease-in-out;
+}
+
+.controls input[type="text"]:focus,
+.controls select:focus {
+    border-color: #00796b;
+    outline: none;
+    box-shadow: 0 0 5px #00796b44;
+}
+
+button {
+    background-color: #00796b;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 15px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #004d40;
+}
+
+/* Table  */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+thead {
+    background-color: #004d40;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+tbody tr {
+    background-color: #f0f0f0;
+    transition: all 0.2s;
+}
+
+tbody tr:nth-child(even){
+    background-color: #e8f5e9;
+}
+
+tbody tr:hover {
+    background-color: #b2dfdb;
+}
+
+.actions button {
+    padding: 5px 10px;
+    font-size: 13px;
+}
+
+.actions button:hover {
+    opacity: 0.8;
+}
+
+/* Pagination */
+#pagination {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+#pagination button {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid #00796b;
+    background-color: #ffffff;
+    color: #00796b;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+#pagination button.active {
+    background-color: #00796b;
+    color: #fff;
+}
+
+#pagination button:hover {
+    background-color: #004d40;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(2px);
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 8% auto;
+    padding: 25px;
+    width: 420px;
+    border-radius: 18px;
+    position: relative;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #00796b;
+    transition: all 0.2s;
+}
+
+.close:hover {
+    color: #004d40;
+}
+
+.modal h2 {
+    color: #00796b;
+    margin-bottom: 20px;
+}
+
+.modal input {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.modal button[type="submit"] {
+    width: 100%;
+    background-color: #00796b;
+    color: #fff;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.modal button[type="submit"]:hover {
+    background-color: #004d40;
+}

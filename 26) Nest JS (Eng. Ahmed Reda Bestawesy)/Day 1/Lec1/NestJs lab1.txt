@@ -1,0 +1,11 @@
+1- install nestjs/cli 
+2- create new nest js project ,
+3- listen on port 4000,
+4- create user module => using g module , controller , service 
+5- create courses module => using g resource 
+6- search and use in project , useClass , useValue, useFactory => from documentation
+https://docs.nestjs.com/fundamentals/custom-providers
+7- user data must have 
+id "incremental",firstName , Last Name , age  ,password, email "unique"  , courses[]
+8- course data will be  
+name , grade , students[]

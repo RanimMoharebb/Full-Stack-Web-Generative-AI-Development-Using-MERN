@@ -1,0 +1,46 @@
+$primary-color: #4a90e2;
+$secondary-color: #f39c12;
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 40px;
+}
+
+.main {
+
+  .main-title {
+    color: $primary-color;
+  }
+
+  .main-subtitle {
+    color: $secondary-color;
+  }
+
+  .main-btn {
+    background-color: $primary-color;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: $secondary-color;
+    }
+  }
+}
+
+
+
+$font-sizes: 18px, 16px, 14px;
+
+@each $size in $font-sizes {
+  .font-#{$size} {
+    font-size: $size;
+  }
+}
+
+.content {
+  margin-top: 40px;
+}

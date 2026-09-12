@@ -1,0 +1,39 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 40px;
+}
+
+.main .main-title {
+  color: #4a90e2;
+}
+.main .main-subtitle {
+  color: #f39c12;
+}
+.main .main-btn {
+  background-color: #4a90e2;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.main .main-btn:hover {
+  background-color: #f39c12;
+}
+
+.font-18px {
+  font-size: 18px;
+}
+
+.font-16px {
+  font-size: 16px;
+}
+
+.font-14px {
+  font-size: 14px;
+}
+
+.content {
+  margin-top: 40px;
+}/*# sourceMappingURL=style.css.map */

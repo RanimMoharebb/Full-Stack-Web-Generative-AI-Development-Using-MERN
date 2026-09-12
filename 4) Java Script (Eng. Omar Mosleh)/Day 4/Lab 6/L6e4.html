@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex4 - JSON</title>
+    <style>
+      body { font-family: system-ui, Arial; padding: 16px; }
+      table { border-collapse: collapse; width: 100%; margin-top: 12px; }
+      td, th { border: 1px solid #ddd; padding: 8px; }
+    </style>
+  </head>
+  <body>
+    <h1>JSON Practice</h1>
+    <button id="run">Run</button>
+    <div id="app"></div>
+
+    <script>
+      const runBtn = document.querySelector('#run');
+      const app = document.querySelector('#app');
+
+      runBtn.addEventListener('click', () => 
+      {
+        // TODO: make an array of users
+        const users = [
+          { id: 1, name: 'ranim', email: 'ranim@gmail.com' },
+          { id: 2, name: 'Sara', email: 'sara@gmail.com' },              { id: 3, name: 'Ali', email: 'ali@gmail.com' }
+        ];
+
+        // TODO: stringify -> jsonText
+        const jsonText = JSON.stringify(users);
+            
+        // TODO: parse -> usersAgain 
+        const usersAgain = JSON.parse(jsonText);
+        
+        // TODO: render usersAgain into a table
+        let html = '<table>';
+        html += '<tr><th>ID</th><th>Name</th><th>Email</th></tr>';
+
+        for (let i = 0; i < usersAgain.length; i++) 
+        {
+          html += '<tr>';
+          html += '<td>' + usersAgain[i].id + '</td>';
+          html += '<td>' + usersAgain[i].name + '</td>';
+          html += '<td>' + usersAgain[i].email + '</td>';
+          html += '</tr>';
+        }
+
+      html += '</table>';
+      app.innerHTML = html;
+      });
+    </script>
+
+  </body>
+</html>
+

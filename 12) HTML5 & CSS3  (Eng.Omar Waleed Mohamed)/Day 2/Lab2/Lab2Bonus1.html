@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 1 - Cookie Library</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+        }
+
+        h2 {
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 2em;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px 5px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid #aaa;
+            width: 180px;
+        }
+
+        button {
+            display: block;
+            width: 220px;
+            margin: 12px auto;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #2575fc, #6a11cb);
+        }
+
+        button:active {
+            transform: translateY(1px);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+
+
+<body>
+
+<h2>Cookie Library Test</h2>
+
+<input type="text" id="cookieName" placeholder="Cookie Name">
+<input type="text" id="cookieValue" placeholder="Cookie Value">
+<br>
+<button onclick="setNewCookie()">Set Cookie</button>
+<button onclick="getExistingCookie()">Get Cookie</button>
+<button onclick="deleteExistingCookie()">Delete Cookie</button>
+<button onclick="showAllCookies()">Show All Cookies</button>
+<button onclick="checkCookie()">Has Cookie?</button>
+
+<script>
+function setCookie(name,value,expiry){
+    var cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+    if(expiry) cookie += "; expires=" + expiry.toUTCString();
+    cookie += "; path=/; SameSite=Lax";
+    document.cookie = cookie;
+}
+
+function getCookie(name){
+    var cookies = document.cookie.split("; ");
+    for(var i=0;i<cookies.length;i++){
+        var parts = cookies[i].split("=");
+        if(parts[0] === encodeURIComponent(name)) return decodeURIComponent(parts.slice(1).join("="));
+    }
+    return null;
+}
+
+function deleteCookie(name){
+    setCookie(name,"",new Date(0));
+}
+
+function allCookies(){
+    var cookies = document.cookie.split("; ").filter(c=>c);
+    var list = cookies.map(c=>{
+        let eq=c.indexOf("=");
+        let n=c.substring(0,eq);
+        let v=c.substring(eq+1);
+        return decodeURIComponent(n) + "=" + decodeURIComponent(v);
+    });
+    return list;
+}
+
+function hasCookie(name){
+    return getCookie(name) !== null;
+}
+
+// BUTTON FUNCTIONS
+function setNewCookie(){
+    var name=document.getElementById("cookieName").value.trim();
+    var value=document.getElementById("cookieValue").value.trim();
+    if(!name){ alert("Enter cookie name!"); return; }
+    var date=new Date(); date.setDate(date.getDate()+7);
+    setCookie(name,value,date);
+    alert("Cookie Saved: "+name+"="+value);
+}
+
+function getExistingCookie(){
+    var name=document.getElementById("cookieName").value.trim();
+    if(!name){ alert("Enter cookie name!"); return; }
+    var val=getCookie(name);
+    alert(val===null?"Cookie not found!":"Cookie: "+name+"="+val);
+}
+
+function deleteExistingCookie(){
+    var name=document.getElementById("cookieName").value.trim();
+    if(!name){ alert("Enter cookie name!"); return; }
+    deleteCookie(name);
+    alert("Cookie Deleted: "+name);
+}
+
+function showAllCookies(){
+    var list=allCookies();
+    alert(list.length===0?"No cookies found!":"Cookies:\n"+list.join("\n"));
+}
+
+function checkCookie(){
+    var name=document.getElementById("cookieName").value.trim();
+    if(!name){ alert("Enter cookie name!"); return; }
+    alert(hasCookie(name)?"Cookie exists!":"Cookie does not exist!");
+}
+</script>
+
+</body>
+</html>

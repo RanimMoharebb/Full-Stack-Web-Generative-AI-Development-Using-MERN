@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day1 Demo</title>
+    <style>
+      meter {
+        width: 50%;
+        height: 100px;
+      }
+      progress {
+        width: 50%;
+        height: 100px;
+      }
+    </style>
+    <!-- <link rel="stylesheet" href="./fw.css" /> -->
+  </head>
+  <body>
+    <!-- <meter min="0" low="30" value="50" optimum="70" high="80" max="100">
+      not supported
+    </meter>
+    <meter min="0" low="30" value="10" optimum="70" high="80" max="100">
+      not supported
+    </meter>
+    <meter min="0" low="30" value="90" optimum="70" high="80" max="100">
+      not supported
+    </meter>
+    <br />
+    <hr />
+    <br />
+    <progress id="progressele" value="0" max="100">not supported</progress>
+    <span id="progressdis"></span>
+    <br />
+    <hr />
+    <br />
+    <p>Lorem, ipsum <mark>dolor</mark>.</p>
+    <br />
+    <hr />
+    <br />
+    <code>for(let <var>i</var> = 0 ; <var>i</var> < 10 ; <var>i</var>++)</code>
+    <br />
+    <hr />
+    <br /> -->
+    <!-- <details open ontoggle="console.log('details toggled')">
+      details clickable title
+      <summary>HTML5</summary>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo aut
+        dignissimos sint voluptates vel reiciendis at est libero, voluptatem
+        aliquam incidunt quia, asperiores commodi quo expedita molestias quod
+        laborum illo?
+      </p>
+    </details>
+    <br />
+    <hr />
+    <br /> -->
+    <!-- 2 types of validation -->
+    <!-- data validation -->
+    <!-- -------@gmail.com ❌ as data -->
+    <!-- -------@yahoo.com ✅ as data -->
+    <!-- formate validation -->
+    <!-- ---------@---.---.---- as formate -->
+    <!-- 3 things -->
+    <!-- 1) the right input type -->
+    <!-- 2) required -->
+    <!-- 2) patterns -->
+    <!-- <form>
+      <input type="text" pattern="[a-z]{3,6}" required />
+      <input type="email" required />
+      <input type="submit" />
+    </form> -->
+
+    <!-- <input type="color" oninput="console.log(this.value)" />
+    <br />
+    <input type="date" />
+    <br /> -->
+    <!-- not supported => date , time , timezone -->
+    <!-- <input type="datetime" />
+    <br />
+    <input type="datetime-local" />
+    <br />
+    <input type="week" />
+    <br />
+    <input type="month" />
+    <br />
+    <input type="time" />
+    <br />
+    <input type="search" />
+    <br />
+    <input type="tel" />
+    <br />
+    <input type="url" />
+    <br />
+    <br />
+    <br />
+    <form>
+      <input type="tel" />
+      <br />
+      <input type="url" />
+      <br />
+      <input type="submit" />
+    </form>
+    <br />
+    <br />
+    <br />
+    <input type="number" min="20" max="60" step="2" />
+    <br />
+    <input
+      id="rangeele"
+      type="range"
+      value="0"
+      min="0"
+      max="100"
+      step="2"
+      oninput="displayRange()"
+    />
+    <span id="rangedis"></span> -->
+
+    <!-- <form
+      oninput="res.value = res2.value = parseInt(p1.value) + parseInt(p2.value)"
+    >
+      <input type="text" name="n1" id="p1" />
+      <input type="text" name="n2" id="p2" />
+      <output id="res" name="res2" for="p1 p2"></output>
+    </form> -->
+
+    <!-- <select>
+      <option value="1">1</option>
+      <option value="1">2</option>
+      <option value="1">3</option>
+      <option value="1">4</option>
+    </select> -->
+
+    <!-- <form>
+      <input type="text" list="d1" />
+      <datalist id="d1">
+        <option value="html">Lorem.</option>
+        <option value="js">Lorem2</option>
+        <option label="hamada" value="css"></option>
+        <option  label="hamada" value="ts">Lorem3</option>
+      </datalist>
+
+      <input type="submit" />
+    </form> -->
+
+    <!-- <form>
+      <input type="text" placeholder="First Name" />
+      <input type="email" autocomplete="off" />
+      <input type="submit"  />
+    </form> -->
+
+    <!-- store extra data -->
+    <!-- style -->
+    <!-- behavior -->
+    <!-- <p data-abc="red">Lorem ipsum dolor sit amet.</p>
+    <p data-abc="green">Lorem ipsum dolor sit amet.</p>
+    <p data-abc="click">Lorem ipsum dolor sit amet.</p> -->
+
+    <!-- <table border="2">
+      
+      <tbody>
+        <tr>
+          <td>body</td>
+          <td>body2</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>foot</td>
+          <td>foot2</td>
+        </tr>
+      </tfoot>
+      <thead>
+        <tr>
+          <th>head</th>
+          <th>head2</th>
+        </tr>
+      </thead>
+    </table> -->
+
+    <!-- <script>
+      //   document
+      //     .querySelector("[data-abc='click']")
+      //     .addEventListener("click", function () {
+      //       console.log("object");
+      //     });
+      //   const progressele = document.getElementById("progressele");
+      //   const progressdis = document.getElementById("progressdis");
+      //   progressdis.innerText = progressele.value;
+      //   const id = setInterval(function () {
+      //     progressele.value += 10;
+      //     progressdis.innerText = progressele.value;
+      //     if (progressele.value === 100) {
+      //       progressele.value = 0;
+      //     }
+      //   }, 1000);
+      //   const rangeele = document.getElementById("rangeele");
+      //   const rangedis = document.getElementById("rangedis");
+      //   rangedis.innerText = rangeele.value;
+      //   function displayRange() {
+      //     rangedis.innerText = rangeele.value;
+      //   }
+    </script> -->
+    <!-- <script src="./fw.js"></script> -->
+
+    <p>address : street,3 smoha</p>
+
+    <!-- <p itemprop="">name :</p> -->
+
+    <div itemtype="" itemscope itemprop="">
+      <p itemprop="">name :</p>
+      <p itemprop="">phone :</p>
+      <div itemprop="" itemtype="" itemscope>
+        <span>street : </span>
+        <span>building : </span>
+      </div>
+    </div>
+  </body>
+</html>

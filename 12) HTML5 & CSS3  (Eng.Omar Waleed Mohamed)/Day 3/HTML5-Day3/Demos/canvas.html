@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      canvas {
+        /* width: 800px;
+        height: 600px; */
+        background-color: rgb(180, 180, 180);
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas width="800" height="600" id="c1"></canvas>
+    <!-- <canvas id="c1"></canvas> -->
+
+    <script>
+      const canvas = document.getElementById("c1");
+      const context = canvas.getContext("2d");
+
+      //   context.beginPath();
+      //   context.lineWidth = 15;
+      //   context.lineJoin = "round";
+      //   //   context.lineCap='round';
+      //   context.moveTo(50, 50);
+      //   context.lineTo(300, 50);
+      //   context.lineTo(300, 400);
+      //   //   context.lineTo(50, 80);
+      //   context.closePath();
+      //   context.stroke();
+      //   context.beginPath();
+
+      // let img = new Image();
+      // img.src = "./images/img.jpg";
+      // img.onload = function () {
+      //   console.log(img);
+      //   // if we did not set dimensions => will use image original dimensions
+      //   // context.drawImage(img, 0, 0);
+      //   context.drawImage(img, 0, 0, 200, 200);
+      //   // img , starting point , width , height
+      //   // context.drawImage(img, 0, 0, 500, 500);
+      //   // first start point => crop imag
+      //   // width => crop size
+      //   // hight => crop size
+      //   // context.drawImage(img, 100, 100, 200, 100, 100, 100, 400, 400);
+      // };
+
+      context.beginPath();
+      context.moveTo(300, 50);
+      context.lineTo(500, 50);
+      context.stroke();
+
+      context.save();
+
+      context.beginPath();
+      // context.rotate((Math.PI / 180) * 20);
+      context.scale(1.5, 1.5); // 1 , 1
+      context.lineWidth = 15;
+      context.lineJoin = "round";
+      context.strokeStyle = "red";
+      context.moveTo(300, 300);
+      context.lineTo(500, 300);
+      context.stroke();
+
+      context.restore();
+      context.beginPath();
+      context.strokeStyle = "blue";
+      context.moveTo(400, 100);
+      context.lineTo(500, 100);
+      context.stroke();
+
+      context.beginPath();
+      context.strokeStyle = "green";
+      context.moveTo(500, 200);
+      context.lineTo(700, 200);
+      context.stroke();
+    </script>
+  </body>
+</html>

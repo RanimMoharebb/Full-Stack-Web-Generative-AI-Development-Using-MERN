@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task List</title>
+</head>
+<body>
+  <h1>My Tasks</h1>
+  
+  <input type="text" id="taskInput" placeholder="Enter task">
+  <button id="addBtn">Add Task</button>
+  
+  <ul id="taskList"></ul>
+  
+<script>
+    var taskInput = document.getElementById("taskInput");
+    var addBtn = document.getElementById("addBtn");
+    var taskList = document.getElementById("taskList");
+
+    addBtn.onclick = function () 
+    {
+        if (taskInput.value !== "") 
+        {
+            var li = document.createElement("li");
+            li.textContent = taskInput.value;
+            var deleteBtn = document.createElement("button");
+            deleteBtn.textContent = "Delete";
+            deleteBtn.onclick = function () 
+            {
+                li.remove();
+            };                
+            li.appendChild(deleteBtn);
+            taskList.appendChild(li);
+            taskInput.value = "";
+        }
+    };
+</script>
+
+</body>
+</html>

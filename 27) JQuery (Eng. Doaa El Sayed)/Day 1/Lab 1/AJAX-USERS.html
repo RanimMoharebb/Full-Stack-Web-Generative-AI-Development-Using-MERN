@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+<input id="id" type="number" placeholder="User ID">
+<button id="get">Get User</button>
+
+<div id="result"></div>
+
+<h3>All Users</h3>
+<div id="all"></div>
+
+<script>
+$(document).ready(function () {
+
+    $("#get").click(function () {
+        $.get("https://reqres.in/api/users/" + $("#id").val(), function (data) {
+            let u = data.data;
+            $("#result").html(
+                u.first_name + " " + u.last_name +
+                "<br><img src='" + u.avatar + "'>"
+            );
+        });
+    });
+
+    $.get("https://reqres.in/api/users", function (data) {
+        let out = "";
+        $.each(data.data, function (i, u) {
+            out += u.first_name + " " + u.last_name +
+                "<br><img src='" + u.avatar + "'><hr>";
+        });
+        $("#all").html(out);
+    });
+
+});
+</script>
+
+</body>
+</html>

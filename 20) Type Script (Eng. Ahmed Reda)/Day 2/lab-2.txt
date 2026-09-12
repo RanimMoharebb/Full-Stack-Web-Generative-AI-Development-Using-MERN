@@ -1,0 +1,91 @@
+TODO:  Define an interface 'Product' with:
+- id (string)
+- name (string)
+- price (number)
+- category (string)
+- inStock (boolean)
+- quantity? (optional number for bulk items)
+
+TODO: Define a custom type 'ProductCategory' that can only be:
+"electronics", "clothing", "books", "food"
+
+TODO: Define an interface 'Customer' with:
+- id (string)
+- name (string)
+- email (string)
+- loyaltyPoints (number)
+- address? (optional Address object)
+
+TODO: Define an interface 'Address' with:
+- street (string)
+- city (string)
+- zipCode (string)
+- country (string)
+
+TODO: Create the 'Order' interface that includes:
+- id (string)
+- customer (Customer)
+- items (OrderItem[])
+- discount (optional Discount)
+- shippingAddress (Address)
+- orderDate (Date)
+- status (OrderStatus - create enum: PENDING, PROCESSING, SHIPPED, DELIVERED, CANCELLED)
+- totalAmount (computed property - read-only in interface)
+
+
+TODO: Define an interface 'Discount' with:
+- type (custom type 'DiscountType' which can be "percentage" or "fixed")
+- value (number)
+- code? (optional string)
+
+TODO: Create an intersection type 'OrderItem' that combines:
+- Product (without quantity property)
+- { quantity: number; totalPrice: number }
+
+TODO: Create a type 'PublicCustomer' that only includes public info
+(exclude 'loyaltyPoints' from Customer)
+
+TODO: Create a type 'PartialOrder' that makes all properties optional
+from the 'Order' interface (define Order interface below first)
+
+TODO: Create a type 'ReadonlyOrder' that makes Order properties readonly
+
+TODO: Create a type 'CustomerWithRequiredAddress' that makes address required
+
+TODO: Create a type 'ProductWithoutId' that omits the 'id' property from Product
+
+TODO: Create a generic function 'getItemsById' that:
+- Takes an array of items with an 'id' property (use constraint)
+- Takes an id string
+- Returns the items that match the id
+- Use proper generic constraint
+
+TODO: Create a generic interface 'APIResponse<T>' with:
+- success (boolean)
+- data (T)
+- message? (string)
+- timestamp (Date)
+
+TODO: Create a generic function 'mergeObjects' that:
+- Takes two objects of different types (U & V)
+- Returns their intersection
+- Use a constraint to ensure both are objects
+
+TODO: Define a function type 'DiscountCalculator' that:
+- Takes total amount (number) and discount (Discount)
+- Returns the final amount after discount
+
+TODO: Define a function type 'ShippingCalculator' that:
+- Takes weight (number) and destination (string)
+- Returns shipping cost (number)
+
+TODO: Define a function type 'PaymentProcessor' that:
+- Takes amount (number) and payment details (Record<string, any>)
+- Returns a promise of boolean (success status)
+
+TODO: Implement the actual functions for all three types above
+
+TODO: Create a function 'createOrderSummary' that:
+- Takes an Order
+- Returns a formatted string with all order details
+- Uses all utility types you created

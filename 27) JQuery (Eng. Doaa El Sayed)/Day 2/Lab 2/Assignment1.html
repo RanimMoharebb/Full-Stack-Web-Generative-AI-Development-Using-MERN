@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Assignment 1 - jQuery Login Dialog</title>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<link rel="stylesheet"
+href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+
+<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+
+<link rel="stylesheet" href="css/style.css">
+
+<script src="js/script.js"></script>
+
+</head>
+
+<body>
+
+<h1>jQuery Day 2 Lab</h1>
+
+<button id="openLogin">Open Login Window</button>
+
+<h2 id="welcomeMessage"></h2>
+
+<div id="loginDialog" title="Login Form">
+
+    <form id="loginForm">
+
+        <label>Username</label><br>
+        <input type="text" id="username" name="username"><br><br>
+
+        <label>Password</label><br>
+        <input type="password" id="password" name="password"><br><br>
+
+        <label>Email</label><br>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label>Phone Number</label><br>
+        <input type="text" id="phone" name="phone"><br><br>
+
+        <input type="checkbox" id="remember">
+        <label for="remember">Remember Password</label>
+
+    </form>
+
+</div>
+
+</body>
+</html>

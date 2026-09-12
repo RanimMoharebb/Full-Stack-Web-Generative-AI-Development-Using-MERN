@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Gallery</title>
+  <style>
+    #gallery { text-align: center; }
+    #mainImage { max-width: 500px; height: 300px; }
+    button { margin: 10px; padding: 10px; }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+  </style>
+</head>
+<body>
+  <div id="gallery">
+    <img id="mainImage" src="" alt="">
+    <p id="caption"></p>
+    <p id="position"></p>
+    <button id="prevBtn">Previous</button>
+    <button id="nextBtn">Next</button>
+  </div>
+  
+<script>
+    var images = [
+        {
+          src: 'https://placehold.co/500x300/FF0000/FFFFFF/png?text=Image+1',
+          caption: 'Red Image',
+        },
+        {
+          src: 'https://placehold.co/500x300/00FF00/000000/png?text=Image+1',
+          caption: 'Green Image',
+        },
+        {
+          src: 'https://placehold.co/500x300/0000FF/FFFFFF/png?text=Image+1',
+          caption: 'Blue Image',
+        },
+        {
+          src: 'https://placehold.co/500x300/FFFF00/000000/png?text=Image+1',
+          caption: 'Yellow Image',
+        },
+    ];
+    
+
+    var mainImage = document.getElementById("mainImage");
+    var caption = document.getElementById("caption");
+    var position = document.getElementById("position");
+    var prevBtn = document.getElementById("prevBtn");
+    var nextBtn = document.getElementById("nextBtn");
+    var currentIndex = 0;
+
+    function showImage() 
+    {
+        mainImage.src = images[currentIndex].src;
+        caption.textContent = images[currentIndex].caption;
+        position.textContent = "Image " + (currentIndex + 1) + " of " + images.length;
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex === images.length - 1;
+    }
+
+    nextBtn.onclick = function () 
+    {
+        currentIndex++;
+        showImage();
+    };
+
+    prevBtn.onclick = function () 
+    {
+        currentIndex--;
+        showImage();
+    };
+
+    showImage();
+
+</script>
+</body>
+</html>

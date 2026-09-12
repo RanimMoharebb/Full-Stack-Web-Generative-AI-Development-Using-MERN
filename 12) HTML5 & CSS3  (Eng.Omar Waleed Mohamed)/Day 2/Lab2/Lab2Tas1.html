@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebStorage Polyfill Using Cookie.js</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+        }
+
+        body {
+            padding: 50px 0;
+        }
+
+        h2 {
+            margin-bottom: 40px;
+            color: #333;
+            font-size: 2em;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px 5px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid #aaa;
+            width: 200px;
+        }
+
+        button {
+            display: block;
+            width: 200px;
+            margin: 15px auto;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #2575fc, #6a11cb);
+        }
+
+        button:active {
+            transform: translateY(1px);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+<h2>WebStorage Polyfill Test</h2>
+
+<input type="text" id="usernameInput" placeholder="Enter Name">
+
+<button onclick="saveName()">Save Name</button>
+<button onclick="getName()">Get Name</button>
+<button onclick="removeName()">Remove Name</button>
+<button onclick="clearStorage()">Clear Storage</button>
+
+<script>
+// Web Storage API -> localStorage (persistent) and sessionStorage (cleared on browser close)
+// Cookies -> Small data stored in the browser -> older method before localStorage
+// Polyfill -> A piece of code that provides functionality when the native feature is missing
+
+
+// by3mlo eh ???????
+function getCookie(cookieName) {
+    var cookies = document.cookie.split("; ");
+    for (var i = 0; i < cookies.length; i++) {
+        var parts = cookies[i].split("=");
+        if (parts[0] === cookieName) return parts[1];
+    }
+    return null;
+}
+
+function setCookie(cookieName, cookieValue, expiryDate) {
+    var cookie = cookieName + "=" + cookieValue;
+    if (expiryDate) cookie += "; expires=" + expiryDate.toUTCString();
+    document.cookie = cookie;
+}
+
+function deleteCookie(cookieName) {
+    var date = new Date();
+    date.setDate(date.getDate() - 1);
+    document.cookie = cookieName + "=; expires=" + date.toUTCString();
+}
+
+function allCookieList() {
+    var cookies = document.cookie.split("; ");
+    var obj = {};
+    for (var i = 0; i < cookies.length; i++) {
+        var parts = cookies[i].split("=");
+        obj[parts[0]] = parts[1];
+    }
+    return obj;
+}
+
+// Checks if localStorage exists -> If not -> defines it -> Implements the standard localStorage API using cookies
+
+if (!window.localStorage) {
+    window.localStorage = {
+        setItem: function (key, value) {
+            var date = new Date();
+            date.setFullYear(date.getFullYear() + 1);
+            setCookie(key, value, date);
+        },
+        getItem: function (key) {
+            return getCookie(key);
+        },
+        removeItem: function (key) {
+            deleteCookie(key);
+        },
+        clear: function () {
+            var cookies = allCookieList();
+            for (var key in cookies) deleteCookie(key);
+        }
+    };
+}
+
+
+
+function saveName() {
+    var name = document.getElementById("usernameInput").value;
+    if (!name) {
+        alert("Please enter a name!");
+        return;
+    }
+    localStorage.setItem("username", name);
+    alert("Saved: " + name);
+}
+
+function getName() {
+    var name = localStorage.getItem("username");
+    if (!name) alert("No name saved!");
+    else alert("Saved Name: " + name);
+}
+
+function removeName() {
+    localStorage.removeItem("username");
+    alert("Name removed!");
+}
+
+function clearStorage() {
+    localStorage.clear();
+    alert("All storage cleared!");
+}
+</script>
+
+</body>
+</html>

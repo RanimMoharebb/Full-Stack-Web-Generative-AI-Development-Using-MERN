@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .username:invalid {
+            border: 2px solid rgb(43, 255, 0);
+        }
+        .email:invalid{
+            
+            border: 2px solid rgb(43, 255, 0);
+
+        }
+        input.username:focus,
+        input.email:focus {
+        border: 2px solid rgb(136, 131, 226);
+        outline: none; 
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Change Email Address</h1>
+    <form>
+        <input type="text" placeholder="username" pattern="[a-zA-Z0-9]+"
+ required class="username">
+        <input type="email" placeholder="email" pattern="[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]+" required class="email">
+        
+        <button class="btn">change</button>
+    </form>
+</body>
+</html>

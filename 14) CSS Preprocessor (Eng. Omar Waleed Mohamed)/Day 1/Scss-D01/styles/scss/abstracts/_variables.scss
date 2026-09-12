@@ -1,0 +1,35 @@
+// string
+$fontName: "sans";
+// color
+$colorName: red;
+// number(unit)
+$widthNum: 100px;
+// boolean
+$is_dark: false;
+// list(array)
+// $list: red, 100px, solid;
+$listColors: red, blue, green;
+$borderStyle: 2px solid black;
+$nestedList: (red, blue, green), (100px, 200px, 400px);
+// map(obj)
+$mapColors: (
+  primary: green,
+  secondry: red,
+  subtel: blue,
+);
+$nestedMap: (
+  theme1: (
+    primary: green,
+    secondry: red,
+    subtel: blue,
+  ),
+  theme2: (
+    primary: rgb(128, 98, 0),
+    secondry: rgb(144, 0, 255),
+    subtel: rgb(221, 255, 0),
+  ),
+);
+
+.g {
+  background-color: rgb(28, 186, 20);
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile Card</title>
+</head>
+<body>
+  <div id="profile">
+    <h2 id="profileName">John Doe</h2>
+    <p id="profileBio">Web Developer</p>
+  </div>
+  
+  <div>
+    <input type="text" id="nameInput" placeholder="New name">
+    <button id="nameBtn">Update Name</button>
+  </div>
+  
+  <div>
+    <input type="text" id="bioInput" placeholder="New bio">
+    <button id="bioBtn">Update Bio</button>
+  </div>
+  
+    <script>
+        var profileName = document.getElementById("profileName");
+        var profileBio = document.getElementById("profileBio");
+        var nameInput = document.getElementById("nameInput");
+        var bioInput = document.getElementById("bioInput");
+        var nameBtn = document.getElementById("nameBtn");
+        var bioBtn = document.getElementById("bioBtn");
+
+        nameBtn.onclick = function () 
+        {
+            profileName.textContent = nameInput.value;
+            nameInput.value = "";
+        };
+
+        bioBtn.onclick = function () 
+        {
+            profileBio.textContent = bioInput.value;
+            bioInput.value = "";
+        };
+    </script>
+
+</body>
+</html>

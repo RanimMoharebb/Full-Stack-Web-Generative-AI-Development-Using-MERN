@@ -1,0 +1,67 @@
+.p {
+  background-color: red;
+}
+
+@var: red;
+.b {
+  @var: blue;
+  background-color: @var;
+}
+
+.p {
+  color: blue;
+  .d1 {
+    background-color: yellow;
+  }
+  &-b2 {
+    background-color: black;
+  }
+}
+
+// extend - placeholder
+// .p {
+//   background-color: red;
+// }
+
+// .h:extend(.p)
+
+// mixin
+#h() {
+  background-color: red;
+}
+.g {
+  #h();
+}
+
+.map() {
+  c1: red;
+  c2: blue;
+}
+
+@map: {
+  c1: red;
+  c2: blue;
+};
+
+.d1 {
+  background-color: .map[c1];
+}
+
+
+@list: red, blue, green;
+each(@list , {
+    .d{
+        background-color :@value;
+    }
+})
+each(@map , {
+    .d-@{key}{
+        background-color :@value;
+    }
+})
+
+each(range(5)  , {
+    .d-@{index}{
+        width:  @index * 100px;
+    }
+})

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 2 - WebStorage Polyfill</title>
+    <style>
+        html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+        }
+        h2 {
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 2em;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px 5px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid #aaa;
+            width: 180px;
+        }
+
+        button {
+            display: block;
+            width: 220px;
+            margin: 12px auto;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #2575fc, #6a11cb);
+        }
+
+        button:active {
+            transform: translateY(1px);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+<h2>WebStorage Polyfill Test</h2>
+
+<input type="text" id="key" placeholder="Key">
+<input type="text" id="value" placeholder="Value">
+<br>
+
+<button onclick="saveData()">Save (localStorage)</button>
+<button onclick="getData()">Get</button>
+<button onclick="removeData()">Remove</button>
+<button onclick="clearData()">Clear All</button>
+
+<script>
+// ================================
+// COOKIE FUNCTIONS (Required)
+// ================================
+
+function getCookie(name) {
+    var cookies = document.cookie.split("; ");
+    for (var i = 0; i < cookies.length; i++) {
+        var parts = cookies[i].split("=");
+        if (parts[0] === name) return parts[1];
+    }
+    return null;
+}
+
+function setCookie(name, value, expiryDate) {
+    var cookie = name + "=" + value;
+    if (expiryDate)
+        cookie += "; expires=" + expiryDate.toUTCString();
+    document.cookie = cookie;
+}
+
+function deleteCookie(name) {
+    var date = new Date();
+    date.setDate(date.getDate() - 1);
+    document.cookie = name + "=; expires=" + date.toUTCString();
+}
+
+function allCookieList() {
+    var cookies = document.cookie.split("; ");
+    var obj = {};
+    for (var i = 0; i < cookies.length; i++) {
+        var parts = cookies[i].split("=");
+        obj[parts[0]] = parts[1];
+    }
+    return obj;
+}
+
+// ================================
+// WEB STORAGE POLYFILL
+// ================================
+
+if (!window.localStorage) {
+
+    window.localStorage = {
+
+        setItem: function (key, value) {
+            var date = new Date();
+            date.setFullYear(date.getFullYear() + 1);
+            setCookie(key, value, date);
+        },
+
+        getItem: function (key) {
+            return getCookie(key);
+        },
+
+        removeItem: function (key) {
+            deleteCookie(key);
+        },
+
+        clear: function () {
+            var cookies = allCookieList();
+            for (var key in cookies) {
+                deleteCookie(key);
+            }
+        }
+    };
+}
+
+// ================================
+// TEST FUNCTIONS
+// ================================
+
+function saveData() {
+    var key = document.getElementById("key").value;
+    var value = document.getElementById("value").value;
+    localStorage.setItem(key, value);
+    alert("Saved");
+}
+
+function getData() {
+    var key = document.getElementById("key").value;
+    alert(localStorage.getItem(key));
+}
+
+function removeData() {
+    var key = document.getElementById("key").value;
+    localStorage.removeItem(key);
+    alert("Removed");
+}
+
+function clearData() {
+    localStorage.clear();
+    alert("Cleared");
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task 1 </title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+h2 {
+    margin: 40px;
+    font-size: 50px;
+    font-weight: 300;
+    color: brown;
+}
+
+.layout {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "sidenav main sidebar"
+        "footer footer footer";
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 6px;
+    margin: 40px;
+}
+
+.header {
+    grid-area: header;
+    background: rgb(88, 117, 179);
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+.sidenav {
+    grid-area: sidenav;
+    background: rgb(180,93,34);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+}
+
+.main-content {
+    grid-area: main;
+    background: #7fa33a;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background: rgb(180,93,34);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+}
+
+.footer-main {
+    grid-area: footer;
+    background: rgb(88, 117, 179);
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+@media (max-width: 768px) {
+    .layout {
+        grid-template-areas:
+            "header"
+            "sidenav"
+            "main"
+            "sidebar"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+
+    .sidenav,
+    .main-content,
+    .sidebar {
+        min-height: 150px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<div class="layout">
+    <div class="header">HEADER</div>
+    <div class="sidenav">SIDENAV</div>
+    <div class="main-content">MAIN CONTENT</div>
+    <div class="sidebar">SIDEBAR</div>
+    <div class="footer-main">FOOTER</div>
+</div>
+
+</body>
+</html>

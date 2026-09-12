@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+<img id="img" src="smiley.png" width="150">
+<button id="btn">Toggle Fade</button>
+
+<script>
+$(document).ready(function () {
+
+    let state = true;
+
+    $("#btn").click(function () {
+        if (state) {
+            $("#img").fadeOut();
+        } else {
+            $("#img").fadeIn();
+        }
+        state = !state;
+    });
+
+});
+</script>
+
+</body>
+</html>

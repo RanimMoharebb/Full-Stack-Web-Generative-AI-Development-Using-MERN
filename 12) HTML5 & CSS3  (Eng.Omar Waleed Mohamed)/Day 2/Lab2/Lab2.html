@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML5 & CSS3 - Lab 2 Tasks</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: left;
+            margin: 0;
+            padding: 50px;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            min-height: 100vh;
+        }
+
+        h1, h2 {
+            color: #333;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        .task {
+            background: rgba(255, 255, 255, 0.9);
+            margin: 20px auto;
+            padding: 20px 30px;
+            border-radius: 12px;
+            max-width: 800px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .task p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* Button Styles */
+        .task button {
+            display: block;
+            width: 200px;
+            margin: 15px auto 0 auto;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            color: white;
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .task button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #2575fc, #6a11cb);
+        }
+
+        .task button:active {
+            transform: translateY(1px);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+
+    </style>
+</head>
+<body>
+
+<h1>HTML5 & CSS3 - Lab 2 Tasks </h1>
+
+<!-- Regular tasks -->
+<div class="task">
+    <h2>Task 1 – WebStorage Polyfill</h2>
+    <p>Create a polyfill for <strong>localStorage</strong> and <strong>sessionStorage</strong> using cookies.</p>
+    <button onclick="location.href='Lab2Tas1.html'">Go to Task 1</button>
+</div>
+
+<div class="task">
+    <h2>Task 2 – SVG & MathML</h2>
+    <p>Draw a right triangle using <strong>SVG</strong> and display the Pythagorean theorem using <strong>MathML</strong>.</p>
+    <button onclick="location.href='Lab2Tas2.html'">Go to Task 2</button>
+</div>
+
+<div class="task">
+    <h2>Task 3 – Canvas Animation</h2>
+    <p>Animate a line diagonally across a <strong>canvas</strong> using <strong>requestAnimationFrame</strong>.</p>
+    <button onclick="location.href='Lab2Tas3.html'">Go to Task 3</button>
+</div>
+
+<div class="task">
+    <h2>Task 4 – Landscape Gradient</h2>
+    <p>Draw a simple landscape with sky and grass using <strong>linear gradients</strong> and a black rectangle object.</p>
+    <button onclick="location.href='Lab2Tas4.html'">Go to Task 4</button>
+</div>
+
+<div class="task">
+    <h2>Task 5 – Arc & Radial Gradient</h2>
+    <p>Draw a circle with a <strong>radial gradient</strong> fill and a centered letter inside it, fully circular with no square edges.</p>
+    <button onclick="location.href='Lab2Tas5.html'">Go to Task 5</button>
+</div>
+
+<br>
+<h1>HTML5 & CSS3 - Lab 2 Bonus </h1>
+
+<div class="task">
+    <h2>Bonus Task 1 – Cookie Library Test</h2>
+    <p>Implement a simple interface to set, get, delete, list, and check cookies using buttons and inputs.</p>
+    <button onclick="location.href='Lab2Bonus1.html'">Go to Bonus 1</button>
+</div>
+
+<div class="task">
+    <h2>Bonus Task 2 – WebStorage Polyfill Test</h2>
+    <p>Test the <strong>localStorage polyfill</strong> using a key-value interface with save, get, remove, and clear functions.</p>
+    <button onclick="location.href='Lab2Bonus2.html'">Go to Bonus 2</button>
+</div>
+
+</body>
+</html>

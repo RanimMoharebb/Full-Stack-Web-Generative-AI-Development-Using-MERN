@@ -1,0 +1,16 @@
+-cookie.js library 
+Make your own .js file that should have the following functions:
+• getCookie(cookieName):
+	o Retrieves a cookie value based on a cookie name.
+• setCookie(cookieName,cookieValue[,expiryDate]):
+	o Sets a cookie based on a cookie name, cookie value, 
+		and expiration date.
+• deleteCookie(cookieName):
+	o Deletes a cookie based on a cookie name.
+• allCookieList():
+	o returns a list of all stored cookies
+• hasCookie(cookieName):
+	o Check whether a cookie exists or not
+--------------------------------------------
+-webstorage polyfill like remy sharpe polyfill 
+but use your own logic

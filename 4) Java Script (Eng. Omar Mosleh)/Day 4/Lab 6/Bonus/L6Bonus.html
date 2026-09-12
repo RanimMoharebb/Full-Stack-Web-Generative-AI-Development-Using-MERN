@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex1 - Card Builder</title>
+    <style>
+      body { font-family: system-ui, Arial; padding: 16px; }
+      #cards { display: grid; gap: 12px; margin-top: 12px; }
+      .card { border: 1px solid #ddd; border-radius: 10px; padding: 12px; }
+      .row { display: flex; gap: 8px; flex-wrap: wrap; }
+      button { cursor: pointer; }
+      /*  Extar for Exercise 5 (Bonus)  */
+      .dark { background: #222; color: #fff; }
+    </style>
+  </head>
+  <body>
+    <h1>Card Builder</h1>
+
+    <div class="row">
+      <input id="title" placeholder="Title" />
+      <input id="message" placeholder="Message" />
+      <button id="addBtn">Add Card</button>
+      <!-- Extra for Exercise 5 (Bonus) --> 
+      <button id="themeBtn">Toggle Theme</button>
+    </div>
+
+    <section id="cards"></section>
+
+    <script>
+      const titleInput = document.querySelector('#title');
+      const messageInput = document.querySelector('#message');
+      const addBtn = document.querySelector('#addBtn');
+      const cards = document.querySelector('#cards');
+
+      addBtn.addEventListener('click', () => 
+      {
+        // TODO: create elements (div.card, h3, p, button)
+        const card = document.createElement('div');
+        card.className = 'card';
+
+        const h3 = document.createElement('h3');
+        const p = document.createElement('p');
+        const delBtn = document.createElement('button');
+
+        // TODO: add text from inputs
+        h3.textContent = titleInput.value;
+        p.textContent = messageInput.value;
+        delBtn.textContent = 'Delete';
+
+        // Bonus: make the delete button remove its own card
+        delBtn.addEventListener('click', () => 
+        {
+            card.remove();
+        });
+
+        card.appendChild(h3);
+        card.appendChild(p);
+        card.appendChild(delBtn);
+
+        // TODO: insert using cards.insertAdjacentElement('beforeend', card)
+        cards.insertAdjacentElement('beforeend', card);
+
+        // TODO: clear inputs
+        titleInput.value = '';
+        messageInput.value = '';
+
+
+        // Extra for Exercise 5 (Bonus)
+        const themeBtn = document.querySelector('#themeBtn');
+
+        themeBtn.addEventListener('click', () => 
+        {
+            document.body.classList.toggle('dark');
+
+            if (document.body.classList.contains('dark')) 
+            {
+                document.cookie = 'theme=dark; path=/; max-age=604800';
+            } 
+            else
+            {
+            document.cookie = 'theme=light; path=/; max-age=604800';
+            }
+        });
+
+        if (document.cookie.includes('theme=dark')) 
+        {
+            document.body.classList.add('dark');
+        }
+      });
+    </script>
+  </body>
+</html>

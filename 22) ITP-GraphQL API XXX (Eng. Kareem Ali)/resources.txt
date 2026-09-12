@@ -1,0 +1,81 @@
+https://graphql.org/learn/
+
+https://spec.graphql.org/October2021/#TypeSystemDefinition
+
+https://www.npmjs.com/package/graphql-http
+
+https://www.npmjs.com/package/ruru
+
+
+Serve GraphiQL
+=========================
+
+Assuming your server running on http://localhost:3000
+
+npx ruru -SP -p 4001 -e http://localhost:3000/graphql
+
+
+you can use graphiql ==> http://localhost:4001/
+
+
+
+Using Postman
+=======================
+{
+    "query": "{ hello { text views } }"
+}
+{
+    "query": "{ getBooksWithFilters(filter: {minYear: 2010, maxYear: 2020}) { author } }"
+}
+{
+    "query": "mutation { createUser(userInput: { email: \"A@gmail.com\", password: \"A12345\" }) { _id email } }"
+}
+or using variables
+{
+    "query": "mutation CreateUser($email: String!, $password: String!) { createUser(userInput: { email: $email, password: $password }) { _id email } }",
+    "variables": {
+         "email": "K@gmail.com",
+         "password": "K12345"
+     }
+}
+
+Using Graphiql
+======================
+query {
+    hello {
+         text
+         views
+    }
+}
+mutation {
+    createUser(userInput:{
+        email:"K@gmail.com",
+            password: "K12345"
+    }) {
+        _id
+        email
+    }
+}
+
+mutation {
+    createBook (
+        bookInput:
+    {
+        title: "My Book",
+            author:"Karim",
+        publishedYear :"2010",
+        isbn: "978-1234567890"
+    }) {
+        title
+        author
+        publishedYear
+        isbn
+    }
+}
+
+
+
+query {
+    findBookWithFilters(filter:{minYear: 2000}) {title author publishedYear}
+}
+

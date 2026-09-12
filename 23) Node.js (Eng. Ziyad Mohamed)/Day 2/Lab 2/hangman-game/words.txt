@@ -1,0 +1,7 @@
+apple
+banana
+computer
+javascript
+node
+event
+loop

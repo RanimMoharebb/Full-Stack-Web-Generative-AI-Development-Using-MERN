@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex3 - Event Delegation</title>
+    <style>
+      body { font-family: system-ui, Arial; padding: 16px; }
+      li { cursor: pointer; padding: 6px 10px; }
+      .done { text-decoration: line-through; opacity: 0.6; }
+    </style>
+  </head>
+  <body>
+    <h1>Todo</h1>
+
+    <form id="form">
+      <input id="todo" placeholder="New todo" required />
+      <button>Add</button>
+    </form>
+
+    <ul id="list"></ul>
+
+    <script>
+      const form = document.querySelector('#form');
+      const todoInput = document.querySelector('#todo');
+      const list = document.querySelector('#list');
+
+      form.addEventListener('submit', (e) => 
+      {
+        e.preventDefault();
+        // TODO: create <li>, set text, insert into list
+        // Hint: list.insertAdjacentElement('beforeend', li)
+        const li = document.createElement('li');
+        li.textContent = todoInput.value;
+
+        list.insertAdjacentElement('beforeend', li);
+        todoInput.value = '';
+      });
+
+      list.addEventListener('click', (e) => 
+      {
+        // TODO: delegation: find the closest <li>
+        const li = e.target.closest('li');
+        if (!li) return;
+        
+        // TODO: toggle class 'done'
+        li.classList.toggle('done');
+      });
+    </script>
+
+  </body>
+</html>

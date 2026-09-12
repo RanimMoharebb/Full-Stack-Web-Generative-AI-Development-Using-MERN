@@ -1,0 +1,84 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #111;
+    padding: 15px;
+}
+
+.logo {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.nav-list {
+    list-style-type: none;
+    float: right;
+}
+
+.nav-list li {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.nav-list li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.nav-list li a:hover {
+    background-color: red;
+}
+
+
+
+.hero {
+    height: 90vh;
+    background-image: url("download (1).jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 40px;
+}
+
+.hero-content {
+    width: 50%;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    margin-bottom: 10px;
+}
+
+.btn {
+    background-color: red;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+}
+
+
+
+.hero-image {
+    width: 50%;
+    text-align: center;
+}
+
+.hero-image img {
+    width: 300px;
+}
+
+
+

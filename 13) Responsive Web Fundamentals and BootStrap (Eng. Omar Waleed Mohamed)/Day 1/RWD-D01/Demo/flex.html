@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+        
+      /* flex => 2 needs =>  */
+      /* => parent (flex container)  */
+      /* => children (flex items)  */
+      /* parent => display , default value => parent & childern */
+      /* any property in parent => effect items (equally) */
+
+      /* .flex-container => flex-properties */
+      /* .flex-items => flex-properties => is parent to another items */
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      .flex-container {
+        background-color: rgb(0, 0, 0);
+        color: white;
+        /* font-size: 20px; */
+        width: 50%;
+        height: 100vh;
+        /* width: 700px; */
+        /* padding: 20px; */
+        /* display: inline-flex; */
+        display: flex;
+        /* flex-direction: row; default */
+        /* flex-direction: row-reverse; => main axis => rtl  */
+        /* flex-direction: column; => main => top to bottom , cross => left , right */
+        /* flex-direction: column-reverse; => main => bottom to top  */
+        /* 
+        flex-wrap: wrap; */
+        /* flex-wrap: wrap-reverse; */
+        flex-direction: row;
+        flex-wrap: nowrap;
+        /* flex-flow: row wrap; */
+        /* where to set items on main axis  (cols)*/
+        justify-content: center;
+        /* where to set items on cross axis */
+        /* align-items: baseline; */
+        align-items: center;
+        /* where to set items on cross axis (deal with row) */
+        /* wrap */
+        /* align-content: space-around; */
+        gap: 5px;
+        /* row-gap: 50px; */
+      }
+
+      .flex-container div {
+        /* width: 33%; */
+        /* width: 100px;
+        height: 100px; */
+        /* margin: 2px; */
+        /* margin: 0 5%; */
+        /* flex-shrink: 1; default */
+      }
+
+      .flex-item1 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        /* align-self: flex-end; */
+        /* order: 5; */
+        /* flex-grow: 1; */
+        /* flex-shrink: 2; */
+        /* flex-basis: 200px; */
+        flex: 1 2 200px;
+      }
+
+      .flex-item2 {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        /* align-self: center; */
+        /* 600px */
+        /* 400 , 200 */
+        /* order: 6; */
+        /* flex-grow: 2; */
+        /* flex-shrink: 2; */
+      }
+
+      .flex-item3 {
+        width: 100px;
+        height: 100px;
+        background-color: blueviolet;
+        /* order: 4; */
+        /* order: -2; */
+        /* flex-grow: 3; */
+      }
+
+      .flex-item4 {
+        width: 100px;
+        height: 100px;
+        background-color: darkgreen;
+        /* order: 2; */
+      }
+
+      .flex-item5 {
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+        /* order: 3; */
+      }
+
+      .flex-item6 {
+        width: 100px;
+        height: 100px;
+        background-color: indianred;
+        /* order: 1; */
+        /* order: -1; */
+      }
+
+      p {
+        font-size: 50px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="flex-item1">ITEM1</div>
+      <div class="flex-item2">ITEM2</div>
+      <div class="flex-item3">ITEM3</div>
+      <div class="flex-item4">ITEM4</div>
+      <div class="flex-item5">ITEM5</div>
+      <div class="flex-item6">ITEM6</div>
+      <!-- <p>Lorem, ipsum.</p> -->
+    </div>
+
+    <span>Lorem ipsum dolor sit amet.</span>
+  </body>
+</html>

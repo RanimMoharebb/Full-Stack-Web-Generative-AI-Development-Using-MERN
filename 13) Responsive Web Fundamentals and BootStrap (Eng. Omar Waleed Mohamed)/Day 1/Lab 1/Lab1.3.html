@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab1.3 - Task 3</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 20px;
+        }
+
+        h2 {
+            margin: 40px;
+            font-size: 50px;
+            font-weight: 300;
+            color: brown;
+        }
+
+        .layout {
+            display: flex;
+            flex-direction: column;
+            margin: 40px;
+            gap: 6px;
+        }
+
+        .header,
+        .footer-main {
+            background: rgb(88, 117, 179);
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .middle {
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 300px;
+            gap: 6px;
+        }
+
+        .sidenav {
+            flex: 1 1 125px;
+            background: rgb(180,93,34);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main-content {
+            flex: 2 1 250px;
+            background: #7fa33a;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sidebar {
+            flex: 1 1 125px;
+            background: rgb(180,93,34);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* ✅ Responsive Part */
+        @media (max-width: 700px) {
+            .middle {
+                flex-direction: column;
+            }
+
+            .sidenav,
+            .main-content,
+            .sidebar {
+                flex: 1 1 100%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h2>Task 3</h2>
+
+    <div class="layout">
+
+        <div class="header">HEADER</div>
+
+        <div class="middle">
+            <div class="sidenav">SIDENAV</div>
+            <div class="main-content">MAIN CONTENT</div>
+            <div class="sidebar">SIDEBAR</div>
+        </div>
+
+        <div class="footer-main">FOOTER</div>
+
+    </div>
+
+</body>
+</html>

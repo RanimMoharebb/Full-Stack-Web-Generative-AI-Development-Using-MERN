@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canvas</title>
+</head>
+<body>
+
+<canvas id="draw" width="500" height="500" style="border:1px solid black;"></canvas>
+
+<script>
+
+const canvas = document.getElementById("draw");
+const ctx = canvas.getContext("2d");
+
+const blades = 9;
+const angleStep = (2 * Math.PI) / blades;
+
+let current = 0;
+let phase = "draw";
+
+ctx.translate(canvas.width / 2, canvas.height / 2);
+ctx.fillStyle = "blue";
+
+function drawBlade() {
+    ctx.rotate(angleStep);
+    ctx.fillRect(0, -80, 25, 60);
+}
+
+function eraseBlade() {
+    ctx.rotate(-angleStep);
+    ctx.clearRect(-1, -81, 27, 62);
+}
+
+const interval = setInterval(function() {
+
+    if (phase === "draw") {
+        drawBlade();
+        current++;
+
+        if (current >= blades) {
+            phase = "erase";
+        }
+    } 
+    else {
+        eraseBlade();
+        current--;
+
+        if (current < 0) {
+            clearInterval(interval);
+        }
+    }
+
+}, 500);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+.valid { color: green; }
+.invalid { color: red; }
+</style>
+</head>
+
+<body>
+
+<input type="text" id="user" placeholder="Username">
+<span id="uStatus"></span><br><br>
+
+<input type="password" id="pass" placeholder="Password">
+<span id="pStatus"></span><br><br>
+
+<button id="login">Login</button>
+
+<script>
+$(document).ready(function () {
+
+    function validate() {
+        let u = $("#user").val();
+        let p = $("#pass").val();
+
+        if (u.length >= 3) {
+            $("#uStatus").text("valid").addClass("valid");
+        } else {
+            $("#uStatus").text("not valid").addClass("invalid");
+        }
+
+        if (p.length >= 6) {
+            $("#pStatus").text("valid").addClass("valid");
+        } else {
+            $("#pStatus").text("not valid").addClass("invalid");
+        }
+    }
+
+    $("#user, #pass").keyup(validate);
+
+    $("#login").click(function () {
+        if ($("#uStatus").text() === "valid" &&
+            $("#pStatus").text() === "valid") {
+
+            window.location.href = "welcome.html?user=" + $("#user").val();
+        } else {
+            alert("Invalid input");
+        }
+    });
+
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Underscore.js Demo</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- underscore.js -->
+    <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-min.js"></script>
+</head>
+
+<body>
+
+<h2>Underscore.js Demo</h2>
+
+<script>
+$(document).ready(function () {
+
+    let numbers = [10, 15, 20, 25, 30];
+
+    // filter even numbers
+    let result = _.filter(numbers, function (num) {
+        return num % 2 === 0;
+    });
+
+    document.write("Original: " + numbers + "<br>");
+    document.write("Even Numbers: " + result);
+
+});
+</script>
+
+</body>
+</html>

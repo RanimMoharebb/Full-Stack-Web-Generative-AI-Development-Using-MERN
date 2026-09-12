@@ -1,0 +1,93 @@
+<div class="container py-4">
+    <div class="row justify-content-center align-items-center gap-3 ">
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
+
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
+
+    </div>
+
+    <br>
+    <br>
+
+
+
+    <!-- Interpolation -->
+    <h1>{{data}}</h1>
+
+    <!-- Two Way databinding -->
+    <input type="text" class="form-control" placeholder="Enter Any Data" [(ngModel)]="data">
+
+    <!-- EventBinnding -->
+    <button class="btn btn-warning" (click)="sayHi()">send</button>
+
+    <!-- Structural Directives -->
+    <h1 *ngIf="isLogged">Hello</h1>
+
+
+    <ul>
+        <li *ngFor="let x of friends">{{x}}</li>
+    </ul>
+
+
+
+
+    <table class="table  text-center">
+        <thead>
+            <tr>
+                <th>Order</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let friend of friends ; let i = index ">
+                <td>{{i+1}}</td>
+                <td>{{friend.name}}</td>
+                <td>{{friend.age}}</td>
+                <td>{{friend.id}}</td>
+         
+            </tr>
+
+        </tbody>
+    </table>
+
+
+
+
+    <div [ngSwitch]="status">
+
+
+        <p  class="alert alert-success"  *ngSwitchCase="  'Success'  ">Success</p>
+        <p class="alert alert-danger" *ngSwitchCase=" 'error' ">Error</p>
+        <p class="alert alert-warning" *ngSwitchDefault>Default</p>
+    </div>
+</div>

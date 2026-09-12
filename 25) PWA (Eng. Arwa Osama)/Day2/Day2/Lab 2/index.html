@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To Do List PWA</title>
+
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="manifest" href="manifest.json"/>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- LEFT SIDE -->
+  <div class="left">
+    <h1>Assignment</h1>
+    <ul id="taskList"></ul>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="right">
+
+    <h2>To do list</h2>
+
+    <div class="form">
+
+      <h3>Add new to do</h3>
+
+      <input type="text" id="title" placeholder="Task title">
+
+      <div class="row">
+        <input type="number" id="hours" placeholder="Hours (hh)">
+        <input type="number" id="minutes" placeholder="Minutes (mm)">
+      </div>
+
+      <div class="row">
+        <select id="day"></select>
+        <select id="month"></select>
+        <select id="year"></select>
+      </div>
+
+      <button onclick="addTask()">Add Task</button>
+
+    </div>
+
+    <div class="status">
+      <ul id="logs"></ul>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js");
+  }
+</script>
+
+</body>
+</html>

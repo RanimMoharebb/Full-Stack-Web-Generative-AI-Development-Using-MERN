@@ -1,0 +1,8 @@
+@use "../abstracts/placeholders";
+.btn {
+  @extend %btn;
+}
+$colorName: green;
+.g {
+  background-color: yellow;
+}

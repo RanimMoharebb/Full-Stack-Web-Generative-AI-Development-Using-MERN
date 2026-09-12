@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pythagorean Theorem</title>
+    <style>
+        html, body {
+            height: 100%;                /* full viewport height */
+            margin: 0;                    /* remove default margins */
+            padding: 0;                   /* remove default padding */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #e0f7fa, #b2ebf2); /* full-page gradient */
+        }
+        body {
+            padding: 50px 0;             /* keep top/bottom spacing for content */
+        }
+
+        h2 {
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        svg {
+            margin: 20px 0;
+            border: 1px solid #aaa;
+            background: #fff;
+        }
+
+        math {
+            font-size: 1.5em;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Pythagorean Theorem Calculator</h2>
+<!-- 
+    <svg>: Defines the canvas for scalable vector graphics
+    <polygon>: Draws the triangle using points
+    <text>: Labels each side
+-->
+
+<svg width="300" height="250">
+    <polygon points="100,50 100,200 200,200" fill="red" />
+    <text x="90" y="130">c</text>
+    <text x="150" y="215">a</text>
+    <text x="210" y="130">b</text>
+</svg>
+
+<h3>according to Pythagoras theorem</h3>
+
+<!-- 
+    <mi> = variable 
+    <mo> = operator 
+    <msup> = exponent 
+    <msqrt> = square root
+-->
+        
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mrow>
+        <mi>c</mi>
+        <mo>=</mo>
+        <msqrt>
+            <mrow>
+                <msup><mi>a</mi><mn>2</mn></msup>
+                <mo>+</mo>
+                <msup><mi>b</mi><mn>2</mn></msup>
+            </mrow>
+        </msqrt>
+    </mrow>
+</math>
+
+</body>
+</html>

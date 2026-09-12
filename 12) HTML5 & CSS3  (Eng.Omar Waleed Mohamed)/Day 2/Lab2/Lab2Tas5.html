@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arc and Circular Gradient</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #e0e0ff;
+            margin: 0;
+            padding: 50px 0;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        canvas {
+            display: block;
+            margin: 0 auto;
+            background: transparent; /* transparent background */
+        }
+    </style>
+</head>
+<body>
+
+<h2>Arc with Perfect Circular Gradient</h2>
+<canvas id="canvas5" width="400" height="400"></canvas>
+
+<script>
+var canvas = document.getElementById("canvas5");
+var ctx = canvas.getContext("2d");
+
+// Center coordinates and radius
+var cx = canvas.width / 2;
+var cy = canvas.height / 2;
+var radius = 150;
+
+// Clip the canvas to a circle
+ctx.beginPath();
+ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+ctx.clip();
+
+// Create radial gradient inside the circle
+var gradient = ctx.createRadialGradient(cx, cy, 0, cx, cy, radius);
+gradient.addColorStop(0, "#99ccff"); // center color
+gradient.addColorStop(1, "#0033cc"); // outer color
+
+// Fill the circle with the gradient
+ctx.fillStyle = gradient;
+ctx.fillRect(cx - radius, cy - radius, radius * 2, radius * 2);
+
+// Draw the "N" in the center
+ctx.fillStyle = "white";
+ctx.font = "bold 120px Arial";
+ctx.textAlign = "center";
+ctx.textBaseline = "middle";
+ctx.fillText("N", cx, cy);
+</script>
+
+</body>
+</html>

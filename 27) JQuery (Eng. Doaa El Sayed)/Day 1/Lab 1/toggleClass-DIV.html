@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+#box {
+    width:100px;
+    height:100px;
+    background:blue;
+}
+
+.big {
+    width:200px !important;
+    background:red !important;
+}
+</style>
+</head>
+
+<body>
+
+<div id="box"></div>
+
+<script>
+$(document).ready(function () {
+    $("#box").mouseenter(function () {
+        $(this).toggleClass("big");
+    });
+});
+</script>
+
+</body>
+</html>

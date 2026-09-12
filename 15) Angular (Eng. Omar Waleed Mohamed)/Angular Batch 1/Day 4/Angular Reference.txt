@@ -1,0 +1,53 @@
+Angular Cli Commands 
+Folder Structure 
+
+1. Angular Architecture information
+ components
+ modules
+ templates
+ Decoreators
+
+2. Binding 
+   interpolation 
+   property binding 
+   event binding  (why target.value showing error) 
+   attribute binding (self study )
+   two way binding 
+
+3. Directives
+  Structural Directive ngIf NgFor ngSwitch(selfstudy)
+
+4. Component Communication 
+ Input , Output 
+ Event Emmiter 
+
+
+5. Routing 
+	Router module
+	routerlink
+	router-outlet
+
+6. Services , dependency injection 
+
+7. Api (HTTP Request)			
+
+8. Forms handling 
+	Template Driven Form
+	Reactive Forms
+
+9. Component LifCycle 
+oninit ondestroy onchange
+
+
+10. Pipes 
+	data , currency uppercase and lowercase
+
+11. Rxjs
+
+
+
+Extras 
+1. LazyLoading 
+2. Guards 
+3. Interceptors
+4.Performance Omptimization 

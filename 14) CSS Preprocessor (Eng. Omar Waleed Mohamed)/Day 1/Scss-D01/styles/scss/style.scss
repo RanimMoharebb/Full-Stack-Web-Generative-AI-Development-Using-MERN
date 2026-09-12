@@ -1,0 +1,291 @@
+// p {
+//   background-color: red;
+// }
+
+// commants => will not be compiled in css
+/* compiled in css only */
+/*! compiled in css , min.css */
+
+// nesting => desendant
+// .parent {
+//   background-color: blue;
+// }
+// .parent .ch1 {
+//   background-color: green;
+// }
+// .parent .ch1 .ch1-1 {
+//   background-color: red;
+// }
+// recommand => do not go for more than 3 or 4 levels
+// .parent {
+//   background-color: green;
+//   .ch1 {
+//     background-color: brown;
+//     .ch1-1 {
+//       background-color: black;
+//     }
+//   }
+//   > .child1 {
+//     background-color: yellow;
+//   }
+//   + .sibling {
+//     background-color: yellow;
+//   }
+//   ~ .general {
+//     background-color: red;
+//   }
+// }
+
+// ampersand & => refer => parent selector name
+// .parent {
+//   background-color: black;
+//   color: whitesmoke;
+//   padding: 15px;
+//   width: 50%;
+//   height: 350px;
+//   margin: 0 auto;
+//   &__item {
+//     // == .parent__item
+//     background-color: rgb(17, 7, 62);
+//     padding: 15px;
+//     width: 50%;
+//     height: 50%;
+//     margin: 0 auto;
+//     // &__name { // == .parent__item__name
+//     //   background-color: rgb(7, 62, 23);
+//     //   padding: 15px;
+//     //   width: 50%;
+//     //   height: 50%;
+//     //   margin: 0 auto;
+//     // }
+//   }
+//   &__name {
+//     // == .parent__item__name
+//     background-color: rgb(7, 62, 23);
+//     padding: 15px;
+//     width: 50%;
+//     height: 50%;
+//     margin: 0 auto;
+//   }
+//   &:hover {
+//     background-color: darkgoldenrod;
+//   }
+//   // .parent:hover {
+//   //   background-color: darkgoldenrod;
+//   // }
+// }
+
+// @extend selector => grouping
+// .parent, .parent__item , .parent__name
+// .parent {
+//   background-color: black;
+//   color: whitesmoke;
+//   padding: 15px;
+//   width: 50%;
+//   height: 350px;
+//   margin: 0 auto;
+// }
+
+// .parent__item {
+//   // background-color: rgb(17, 7, 62);
+//   // padding: 15px;
+//   // width: 50%;
+//   // height: 50%;
+//   // margin: 0 auto;
+//   @extend .parent;
+//   background-color: brown;
+// }
+
+// .parent__name {
+//   // background-color: rgb(7, 62, 23);
+//   // padding: 15px;
+//   // width: 50%;
+//   // height: 50%;
+//   // margin: 0 auto;
+//   @extend .parent;
+// }
+
+// %placegolder => blueprint (abstract)
+
+// %parentElemnt {
+//   background-color: black;
+//   color: whitesmoke;
+//   padding: 15px;
+//   width: 50%;
+//   height: 350px;
+//   margin: 0 auto;
+// }
+
+// .div1 {
+//   @extend %parentElemnt;
+//   background-color: black;
+// }
+// .div2 {
+//   background-color: black;
+//   @extend %parentElemnt;
+// }
+// .div3 {
+//   @extend %parentElemnt;
+//   background-color: black;
+// }
+
+// .btn {
+//   background-color: black;
+//   color: whitesmoke;
+//   padding: 15px;
+//   width: 50%;
+//   height: 350px;
+//   margin: 0 auto;
+// }
+
+// .hamda {
+//   // @extend .btn;
+//   @extend %btn;
+//   background-color: red;
+// }
+
+// .d1 {
+//   @extend %btn;
+// }
+
+// %btn {
+//   background-color: black;
+//   color: whitesmoke;
+//   padding: 15px;
+//   width: 50%;
+//   height: 350px;
+//   margin: 0 auto;
+// }
+
+// // string
+// $fontName: "sans";
+// // color
+// $colorName: red;
+// // number(unit)
+// $widthNum: 100px;
+// // boolean
+// $is_dark: true;
+// // list(array)
+// // $list: red, 100px, solid;
+// $listColors: red, blue, green;
+// $borderStyle: 2px solid black;
+// $nestedList: (red, blue, green), (100px, 200px, 400px);
+// // map(obj)
+// $mapColors: (
+//   primary: green,
+//   secondry: red,
+//   subtel: blue,
+// );
+// $nestedMap: (
+//   theme1: (
+//     primary: green,
+//     secondry: red,
+//     subtel: blue,
+//   ),
+//   theme2: (
+//     primary: rgb(128, 98, 0),
+//     secondry: rgb(144, 0, 255),
+//     subtel: rgb(221, 255, 0),
+//   ),
+// );
+
+// .d1 {
+//   background-color: $colorName;
+//   width: $widthNum;
+//   border: $borderStyle;
+//   color: nth($listColors, 3); // arr[idx]
+//   outline-color: map-get($mapColors, subtel);
+//   height: nth(nth($nestedList, 2), 2);
+//   color: map-get(map-get($nestedMap, theme2), secondry);
+// }
+
+// .d2 {
+//   //local scope
+//   $colorName: green;
+//   background-color: $colorName;
+// }
+
+// partial files => start with _varibles => not compiled
+// @import "abstracts/placeholders";
+// .gg {
+//   @extend %btn;
+// }
+
+// @import "abstracts/variables";
+// @import "abstracts/placeholders";
+// @import "pages/home";
+// @use "abstracts/variables" as hamada;
+// @use "abstracts/variables" as hamada2;
+// @use "pages/home";
+// .hh {
+//   background-color: hamada.$colorName;
+// }
+// .ff {
+//   background-color: hamada2.$colorName;
+// }
+
+@use "abstracts/variables" as var;
+
+// $darkMode: red;
+
+// @if (var.$is_dark) {
+//   $darkMode: black;
+// } @else {
+//   $darkMode: green;
+// }
+
+// @if (var.$is_dark) {
+//   $darkMode: black;
+// } @else if($darkMode == red) {
+//   .red-selector {
+//     background-color: red;
+//   }
+// }
+
+// .d1 {
+//   background-color: $darkMode;
+// }
+
+// loops
+$varName: col;
+// interpolation
+// .#{$varName} {
+//   background-color: yellow;
+// }
+// @for from to      1 < 12
+// @for $i from 1 to 12 {
+//   .#{$varName}-#{$i} {
+//     background-color: red;
+//   }
+// }
+// @for from through  1 <= 12
+// @for $i from 1 through 12 {
+//   .#{$varName}-#{$i} {
+//     width: 100% / 12 * $i;
+//   }
+// }
+// arr.length
+// @for $i from 1 through length(var.$listColors) {
+//   .#{nth(var.$listColors , $i)} {
+//     background-color: nth(var.$listColors, $i);
+//   }
+// }
+// @while
+// $i: 1;
+// @while ($i <= 6) {
+//   .col-#{$i} {
+//     width: $i * 1px;
+//   }
+//   $i: $i + 1;
+// }
+// @each
+@each $i in var.$listColors {
+  .#{$i} {
+    background-color: $i;
+  }
+}
+@each $key, $value in var.$mapColors {
+  .#{$key} {
+    background-color: $value;
+  }
+}

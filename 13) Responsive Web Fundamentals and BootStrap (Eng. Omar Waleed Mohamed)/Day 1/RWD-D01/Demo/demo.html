@@ -1,0 +1,172 @@
+<!-- 
+quirks mode => use old rules
+standard mode 
+DTD 
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- meta tags -->
+    <meta charset="UTF-8" />
+    <!-- viewport  -> default desktop screen (980px)  -->
+    <!-- initial-scale => initiate zoom = 100% -->
+    <!-- <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0 , maximum-scale=5.0 , minimum-scale=0.5, user-scalable=yes"
+    /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RWD D01</title>
+    <style>
+      /* body {
+        height: 2000px;
+      } */
+      /* fixed(absolute) units */
+      /*   cm - mm - q (1/40 cm) - in - px ( 96 in ) - pc (picas 6 in) - pt (point 72 in) */
+      /* doesnt change */
+      /* not relative */
+
+      /* relative units */
+      /* rem - em - % - vh - vw - vmin - vmax */
+
+      /* % -> relative to parent */
+      /* 16px */
+      /* html {
+        font-size: 100px;
+      }
+      .parent {
+        background-color: brown;
+        width: 800px;
+        height: 500px;
+        color: aliceblue;
+      }
+      .ch {
+        background-color: black;
+        400px
+        width: 50%;
+        height: 50%;
+        color: azure;
+        font-size: 1%;
+      } */
+
+      /* vh / vw => relative to viewport*/
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      /* .parent {
+        background-color: brown;
+        color: aliceblue; */
+      /* width: 100vw; 50% of viewport */
+      /* height: 100vh; 50% of viewport */
+
+      /* width viewport => 1000px */
+      /* height viewport => 800px */
+
+      /* width: 50vmin;  800px */
+      /* height: 50vmin; 800px */
+
+      /* width: 50vmax; 500px */
+      /* height: 50vmax; 500px */
+
+      /* position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .ch {
+        background-color: black;
+        color: aliceblue;
+        width: 50%;
+      } */
+
+      /* rem - em => relative font-size */
+      /* rem => relative to root element font-size */
+      html {
+        font-size: 20px;
+      }
+      .gradnparent {
+        background-color: brown;
+        color: aliceblue;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50%;
+        height: 50%;
+        /* width: 50rem; 20 * 50 */
+        transform: translate(-50%, -50%);
+        /* font-size: 1rem; */
+        /* font-size: 60px; */
+      }
+      .parent {
+        background-color: brown;
+        color: aliceblue;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50%;
+        height: 50%;
+        /* width: 50rem; 20 * 50 */
+        transform: translate(-50%, -50%);
+        /* font-size: 1rem; */
+        /* font-size: 30px; */
+      }
+      .ch {
+        background-color: black;
+        color: aliceblue;
+        width: 100%;
+        /* font-size: 1rem; */
+        /* font-size: 20px; */
+        /* font-size => 30 */
+        /* font-size: unset; */
+        /* font-size: initial; */
+        /* font-size: inherit; */
+        /* font-size: 30px; */
+        padding: 0.5em;
+        /* em => fontsize -> element */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="parent"> -->
+    <!-- <h1>this is RWD Course</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quo
+        nam dolores rerum aliquam eum accusamus necessitatibus, temporibus nisi
+        obcaecati?
+      </p> -->
+    <!-- </div> -->
+    <!-- <script>
+      console.log(innerWidth);
+      console.log(innerHeight);
+      console.log(visualViewport.scale);
+
+      window.addEventListener("resize", () => {
+        console.log(innerWidth);
+        console.log(visualViewport.scale);
+      });
+    </script> -->
+    <!-- 
+    <header>
+      <nav>
+        <ul>
+          <li>li1</li>
+          <li>li2</li>
+          <li>li3</li>
+        </ul>
+      </nav>
+    </header> -->
+    <div class="gradnparent">
+      <div class="parent">
+        Lorem ipsum dolor sit amet.
+        <div class="ch">Lorem, ipsum dolor.</div>
+      </div>
+    </div>
+
+    <script>
+      const parent = document.querySelector(".parent");
+      const style = getComputedStyle(parent);
+      console.log(style.fontSize);
+    </script>
+  </body>
+</html>

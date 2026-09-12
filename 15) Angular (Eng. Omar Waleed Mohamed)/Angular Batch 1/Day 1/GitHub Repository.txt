@@ -1,0 +1,8 @@
+GitHub Repository
+https://github.com/RanimMohareb/angular-Lab-1
+
+Deployed Website
+https://RanimMohareb.github.io/angular-lab-1/
+
+Correct Name -> admin
+Correct Password -> 1234

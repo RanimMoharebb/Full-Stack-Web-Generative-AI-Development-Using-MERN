@@ -1,0 +1,14 @@
+
+$primary: #ff006e;
+$danger: #3a86ff;
+$success: #06d6a0;
+$warning: orange;
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+@debug $pinks;
+@each $key, $value in $pinks {
+  .bg-#{$key} {
+    background-color: $value;
+  }
+}

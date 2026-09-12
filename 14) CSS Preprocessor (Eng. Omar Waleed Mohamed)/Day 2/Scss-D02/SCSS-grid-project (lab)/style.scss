@@ -1,0 +1,32 @@
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+);
+
+@mixin gridSystem($cols: 12) {
+
+  .con {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @for $i from 1 through $cols {
+    .col-#{$i} {
+      width: (100% / $cols) * $i;
+    }
+  }
+
+  @each $screen, $size in $breakpoints {
+    @media (min-width: $size) {
+      @for $i from 1 through $cols {
+        .col-#{$screen}-#{$i} {
+          width: (100% / $cols) * $i;
+        }
+      }
+    }
+  }
+}
+
+@include gridSystem();

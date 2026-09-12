@@ -1,0 +1,6 @@
+<h2>Students List</h2>
+
+<app-student-table
+  [students]="(students$ | async) || []"
+  (delete)="deleteStudent($event)">
+</app-student-table>

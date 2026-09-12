@@ -1,0 +1,18 @@
+{
+  "name": "book-store-app",
+  "version": "1.0.0",
+  "description": "a graphql api to provide functionality for a book store",
+  "license": "ISC",
+  "author": "Karim Ali",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.13.2",
+    "graphql-http": "^1.22.4"
+  }
+}

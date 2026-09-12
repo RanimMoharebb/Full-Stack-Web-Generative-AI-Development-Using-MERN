@@ -1,0 +1,23 @@
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Department</th>
+    <th>GPA</th>
+    <th>Actions</th>
+  </tr>
+
+  <tr *ngFor="let s of students">
+    <td>{{ s.id }}</td>
+    <td>{{ s.firstName }} {{ s.lastName }}</td>
+    <td>{{ s.age }}</td>
+    <td>{{ s.department }}</td>
+    <td>{{ s.GPA }}</td>
+
+    <td>
+      <button (click)="viewStudent(s.id)">View</button>
+      <button (click)="deleteStudent(s.id)">Delete</button>
+    </td>
+  </tr>
+</table>

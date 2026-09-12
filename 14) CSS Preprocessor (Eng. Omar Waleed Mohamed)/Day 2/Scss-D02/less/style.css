@@ -1,0 +1,51 @@
+.p {
+  background-color: red;
+}
+.b {
+  background-color: blue;
+}
+.p {
+  color: blue;
+}
+.p .d1 {
+  background-color: yellow;
+}
+.p-b2 {
+  background-color: black;
+}
+.g {
+  background-color: red;
+}
+.d1 {
+  background-color: red;
+}
+.d {
+  background-color: red;
+}
+.d {
+  background-color: blue;
+}
+.d {
+  background-color: green;
+}
+.d-c1 {
+  background-color: red;
+}
+.d-c2 {
+  background-color: blue;
+}
+.d-1 {
+  width: 100px;
+}
+.d-2 {
+  width: 200px;
+}
+.d-3 {
+  width: 300px;
+}
+.d-4 {
+  width: 400px;
+}
+.d-5 {
+  width: 500px;
+}

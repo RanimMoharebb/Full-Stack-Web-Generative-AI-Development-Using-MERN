@@ -1,0 +1,42 @@
+/* 
+css-preprocesspor
+pre => before
+processor => compilation , tranformation
+language compilation to normal standard css code
+browser doesnt understand preprocessor language
+css with programming features => loops , conditions , @directives , function , mixins
+=========
+css
+hard maintain 
+repetation
+difficult scaling
+==========
+save time
+reusable code
+no repetation
+readability => strucutre files
+===========
+sass(scss) 2006 => syntactically awsome style sheet
+=> oldest 
+=> most powerful (feature) 
+=> community
+=> closest to css syntax
+less 2009 => leaner style sheet
+stylus 2010 
+============
+sass vs scss
+sass => old/original syntax => exe (.sass)
+     => indentation => no {} , no ;
+     p   
+        background : red
+scss => latest/newer syntax => exe (.scss) (sassy css)
+     => like css syntax 
+     => no indentaion       
+     => any css code works in scss but not the opposite
+============
+install or use 
+(1) vs code extension (live sass compiler)
+=> look for any file (.scss or .sass) => compile to css
+(2) sass package npm i sass -g
+(3) desktop app => koala , prepros , compass
+*/

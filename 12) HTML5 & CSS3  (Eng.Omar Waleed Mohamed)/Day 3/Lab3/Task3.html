@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conic Gradient</title>
+</head>
+<body>
+
+<canvas id="draw" width="500" height="500" style="border:1px solid black;"></canvas>
+
+<script>
+
+const page = document.getElementById("draw");
+const context = page.getContext("2d");
+
+function up(){
+    let grd1 = context.createConicGradient(Math.PI * 180, 250, 250);
+    grd1.addColorStop(0.5, "yellow");  
+    grd1.addColorStop(0.7,"orange");
+    grd1.addColorStop(1, "red");   
+
+    context.fillStyle = grd1;
+    context.beginPath();
+    context.arc(250,250,100,0,Math.PI,true);
+    context.fill();
+}
+
+function down(){
+    let grd2 = context.createConicGradient(Math.PI * -180, 250, 250);
+    grd2.addColorStop(0, "blue");  
+    grd2.addColorStop(0.2,"green");
+    grd2.addColorStop(0.5, "yellow");   
+
+    context.fillStyle = grd2;
+    context.beginPath();
+    context.arc(250,250,100,0,Math.PI,false);
+    context.fill();
+}
+
+function clearUp(){
+    context.fillStyle="white";
+    context.beginPath();
+    context.arc(250,250,101,0,Math.PI,true);
+    context.fill();
+}
+
+function clearDown(){
+    context.fillStyle="white";
+    context.beginPath();
+    context.arc(250,250,101,0,Math.PI,false);
+    context.fill();
+}
+
+let i = 0;
+
+const interval = setInterval(() => {
+
+    if(i < 10 && i % 2 == 0){
+        up();
+        clearDown();
+        i++;
+    }
+    else if(i < 10 && i % 2 == 1){
+        down();
+        clearUp();
+        i++;
+    }
+    else{
+        up();
+        down();
+        clearInterval(interval);
+    }
+
+}, 1000);
+
+</script>
+
+</body>
+</html>

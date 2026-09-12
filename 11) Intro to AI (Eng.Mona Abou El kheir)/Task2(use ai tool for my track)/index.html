@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Shawarma Palace – The finest shawarma in Alexandria, Egypt. Authentic flavors, fresh ingredients, and a taste of the Mediterranean coast."
+    />
+    <title>Shawarma Palace | Alexandria, Egypt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Amiri:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <span class="logo-icon">🌯</span>
+          <div class="logo-text">
+            <span class="logo-main">Shawarma Palace</span>
+            <span class="logo-sub">Alexandria · Est. 1995</span>
+          </div>
+        </div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#menu" class="nav-link">Menu</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <a href="#order" class="btn btn-nav">Order Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="home">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-particles" id="particles"></div>
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span>⭐ #1 Shawarma in Alexandria</span>
+        </div>
+        <h1 class="hero-title">
+          Taste the <span class="gradient-text">Soul</span><br />of Alexandria
+        </h1>
+        <p class="hero-subtitle">
+          Authentic Lebanese-Egyptian shawarma, slow-roasted to perfection.<br />
+          Fresh ingredients, bold spices, and the warm spirit of the
+          Mediterranean coast.
+        </p>
+        <div class="hero-cta">
+          <a href="#menu" class="btn btn-primary">
+            <span>Explore Menu</span>
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+          <a href="#about" class="btn btn-outline">Our Story</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num" data-target="30">0</span
+            ><span class="stat-unit">+</span>
+            <span class="stat-label">Years of Flavor</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num" data-target="50000">0</span
+            ><span class="stat-unit">+</span>
+            <span class="stat-label">Happy Customers</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num" data-target="15">0</span
+            ><span class="stat-unit">+</span>
+            <span class="stat-label">Secret Spices</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll">
+        <span>Scroll Down</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- ========== FEATURES STRIP ========== -->
+    <section class="features-strip">
+      <div class="features-container">
+        <div class="feature-item">
+          <span class="feature-icon">🔥</span>
+          <div>
+            <h3>Slow-Roasted Daily</h3>
+            <p>Marinated overnight, roasted fresh every morning</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">🌿</span>
+          <div>
+            <h3>Fresh Ingredients</h3>
+            <p>Sourced daily from Alexandria's local markets</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">🚴</span>
+          <div>
+            <h3>Fast Delivery</h3>
+            <p>Hot to your door in under 30 minutes</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">🏆</span>
+          <div>
+            <h3>Award-Winning</h3>
+            <p>Best Shawarma in Alexandria – 5 years running</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== MENU ========== -->
+    <section class="menu-section" id="menu">
+      <div class="section-header">
+        <span class="section-tag">Our Menu</span>
+        <h2 class="section-title">
+          Crafted with <span class="gradient-text">Passion</span>
+        </h2>
+        <p class="section-subtitle">
+          Every wrap tells a story of tradition, flavor, and love
+        </p>
+      </div>
+
+      <div class="menu-tabs">
+        <button class="tab-btn active" data-tab="wraps">Wraps</button>
+        <button class="tab-btn" data-tab="plates">Plates</button>
+        <button class="tab-btn" data-tab="sides">Sides & Drinks</button>
+      </div>
+
+      <div class="menu-grid" id="menuGrid">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section class="about-section" id="about">
+      <div class="about-container">
+        <div class="about-image-wrap">
+          <div class="about-img-main">
+            <img
+              src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=600&q=80"
+              alt="Shawarma being prepared"
+              loading="lazy"
+            />
+          </div>
+          <div class="about-img-accent">
+            <img
+              src="https://images.unsplash.com/photo-1561651823-34feb02250e4?w=300&q=80"
+              alt="Fresh ingredients"
+              loading="lazy"
+            />
+          </div>
+          <div class="about-badge-float">
+            <span class="badge-year">1995</span>
+            <span class="badge-label">Est. in Alexandria</span>
+          </div>
+        </div>
+        <div class="about-content">
+          <span class="section-tag">Our Story</span>
+          <h2 class="section-title">
+            A Legacy Born on the
+            <span class="gradient-text">Mediterranean</span>
+          </h2>
+          <p class="about-text">
+            In 1995, Chef Hassan Khalil opened a small shawarma stand on the
+            corniche of Alexandria with a dream — to share the authentic flavors
+            of his grandmother's kitchen with the world. What started as a
+            humble cart has grown into Alexandria's most beloved shawarma
+            destination.
+          </p>
+          <p class="about-text">
+            Our secret lies in the marinade — a blend of 15 hand-ground spices
+            passed down through three generations, combined with the freshest
+            local produce from Alexandria's morning markets. Every bite carries
+            the soul of the Mediterranean.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight">
+              <span class="highlight-icon">👨‍🍳</span>
+              <span>Family Recipe, 3 Generations</span>
+            </div>
+            <div class="highlight">
+              <span class="highlight-icon">📍</span>
+              <span>Heart of Alexandria, Egypt</span>
+            </div>
+            <div class="highlight">
+              <span class="highlight-icon">🌙</span>
+              <span>Open Until 2 AM Every Night</span>
+            </div>
+          </div>
+          <a href="#contact" class="btn btn-primary">Visit Us Today</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== GALLERY ========== -->
+    <section class="gallery-section" id="gallery">
+      <div class="section-header">
+        <span class="section-tag">Gallery</span>
+        <h2 class="section-title">
+          Food That <span class="gradient-text">Speaks</span> for Itself
+        </h2>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item large">
+          <img
+            src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=800&q=80"
+            alt="Shawarma wrap"
+            loading="lazy"
+          />
+          <div class="gallery-overlay"><span>Chicken Shawarma</span></div>
+        </div>
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1561651823-34feb02250e4?w=400&q=80"
+            alt="Shawarma plate"
+            loading="lazy"
+          />
+          <div class="gallery-overlay"><span>Mixed Plate</span></div>
+        </div>
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=400&q=80"
+            alt="Fresh ingredients"
+            loading="lazy"
+          />
+          <div class="gallery-overlay"><span>Fresh Veggies</span></div>
+        </div>
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=80"
+            alt="Garlic sauce"
+            loading="lazy"
+          />
+          <div class="gallery-overlay"><span>Garlic Sauce</span></div>
+        </div>
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=80"
+            alt="Restaurant ambiance"
+            loading="lazy"
+          />
+          <div class="gallery-overlay"><span>Our Kitchen</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS ========== -->
+    <section class="testimonials-section">
+      <div class="section-header">
+        <span class="section-tag">Reviews</span>
+        <h2 class="section-title">
+          What Alexandria <span class="gradient-text">Says</span>
+        </h2>
+      </div>
+      <div class="testimonials-track" id="testimonialsTrack">
+        <!-- Populated by JS -->
+      </div>
+      <div class="testimonials-dots" id="testimonialsDots"></div>
+    </section>
+
+    <!-- ========== ORDER / CTA ========== -->
+    <section class="order-section" id="order">
+      <div class="order-bg"></div>
+      <div class="order-content">
+        <span class="section-tag light">Order Now</span>
+        <h2 class="order-title">
+          Ready to <span class="gradient-text-light">Taste</span> the
+          Difference?
+        </h2>
+        <p class="order-subtitle">
+          Call us, walk in, or order online. We deliver across all of
+          Alexandria.
+        </p>
+        <div class="order-options">
+          <a href="tel:+20123456789" class="order-card">
+            <span class="order-card-icon">📞</span>
+            <h3>Call to Order</h3>
+            <p>+20 12 345 6789</p>
+          </a>
+          <a href="#" class="order-card featured">
+            <span class="order-card-icon">📱</span>
+            <h3>Order Online</h3>
+            <p>Fast & Easy Delivery</p>
+          </a>
+          <a href="#contact" class="order-card">
+            <span class="order-card-icon">🏪</span>
+            <h3>Walk In</h3>
+            <p>Open Daily 10AM – 2AM</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+        <div class="contact-info">
+          <span class="section-tag">Find Us</span>
+          <h2 class="section-title">
+            Come Visit <span class="gradient-text">Us</span>
+          </h2>
+          <div class="contact-details">
+            <div class="contact-item">
+              <span class="contact-icon">📍</span>
+              <div>
+                <h4>Address</h4>
+                <p>
+                  42 El-Corniche Street, Raml Station<br />Alexandria, Egypt
+                </p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">🕐</span>
+              <div>
+                <h4>Hours</h4>
+                <p>Daily: 10:00 AM – 2:00 AM</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📞</span>
+              <div>
+                <h4>Phone</h4>
+                <p>+20 12 345 6789</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📧</span>
+              <div>
+                <h4>Email</h4>
+                <p>hello@shawarmapalace.eg</p>
+              </div>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-btn" aria-label="Facebook">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                />
+              </svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Instagram">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="WhatsApp">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="map-placeholder">
+          <div class="map-embed">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3411.5!2d29.9187!3d31.2001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDEyJzAwLjQiTiAyOcKwNTUnMDcuMyJF!5e0!3m2!1sen!2seg!4v1234567890"
+              width="100%"
+              height="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Shawarma Palace Location"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <span class="logo-icon">🌯</span>
+          <span class="logo-main">Shawarma Palace</span>
+          <p>
+            Serving Alexandria with love since 1995.<br />The taste of home,
+            every single bite.
+          </p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Our Menu</h4>
+          <ul>
+            <li><a href="#menu">Chicken Shawarma</a></li>
+            <li><a href="#menu">Meat Shawarma</a></li>
+            <li><a href="#menu">Mixed Plates</a></li>
+            <li><a href="#menu">Sides & Drinks</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Stay Updated</h4>
+          <p>Get exclusive deals and new menu alerts</p>
+          <form class="newsletter-form" id="newsletterForm">
+            <input type="email" placeholder="Your email address" required />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Shawarma Palace, Alexandria, Egypt. All rights reserved.</p>
+        <p>Made with ❤️ on the Mediterranean Coast</p>
+      </div>
+    </footer>
+
+    <!-- ========== BACK TO TOP ========== -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+      >
+        <path d="M18 15l-6-6-6 6" />
+      </svg>
+    </button>
+
+    <script src="script.js"></script>
+  </body>
+</html>

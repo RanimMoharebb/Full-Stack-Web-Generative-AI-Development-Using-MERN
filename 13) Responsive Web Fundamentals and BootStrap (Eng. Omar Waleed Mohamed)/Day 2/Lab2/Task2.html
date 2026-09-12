@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rotating Layout Style Task 3</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f4f4f4;
+    transition: background 0.5s ease;
+}
+
+h2 {
+    margin: 40px;
+    font-size: 50px;
+    font-weight: 300;
+    color: brown;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: transform 0.3s ease;
+}
+
+.layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+.box1 { background: rgb(88, 117, 179); flex: 1 1 100%; } /* header style top */
+.box2 { background: rgb(180, 93, 34); flex: 1 1 30%; }   /* left side */
+.box3 { background: #7fa33a; flex: 2 1 40%; }            /* main content */
+.box4 { background: rgb(180, 93, 34); flex: 1 1 30%; }   /* right side */
+.box5 { background: rgb(88, 117, 179); flex: 1 1 100%; } /* footer style bottom */
+
+.rotate-animation {
+    animation: rotateShape 8s linear infinite;
+}
+
+@keyframes rotateShape {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    body {
+        background: #222;
+    }
+
+    .box1 { background: #5875b3; }
+    .box2 { background: #b45d22; }
+    .box3 { background: #7fa33a; }
+    .box4 { background: #b45d22; }
+    .box5 { background: #5875b3; }
+}
+</style>
+</head>
+<body>
+
+
+<div class="container" id="gridContainer">
+    <div class="layout">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+        <div class="box box5">5</div>
+    </div>
+</div>
+
+<script>
+const container = document.getElementById('gridContainer');
+let resizeTimer;
+
+window.addEventListener('resize', () => {
+    container.classList.add('rotate-animation');
+
+    clearTimeout(resizeTimer);
+
+    resizeTimer = setTimeout(() => {
+        container.classList.remove('rotate-animation');
+    }, 1500);
+});
+</script>
+
+</body>
+</html>

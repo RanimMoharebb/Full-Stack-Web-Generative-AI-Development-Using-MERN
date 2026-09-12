@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional Custom Video Player</title>
+
+<style>
+body {
+  background: #1e1e1e;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.player-container {
+  width: 750px;
+  margin: 30px auto;
+  background: #2c2c2c;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+
+video {
+  width: 100%;
+  border-radius: 10px;
+}
+
+button {
+  padding: 8px 14px;
+  margin: 5px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.horizontal-sliders {
+  display: flex;
+  gap: 20px;
+}
+
+.slider-box {
+  flex: 1;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.progress-container input[type="range"] {
+  flex-grow: 1;  
+}
+
+.time-display {
+  white-space: nowrap;
+  font-weight: bold;
+  text-align: right;
+  width: 70px;
+}
+
+.controls {
+  margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="player-container">
+
+  <video id="myVideo" poster="frozen.jpg">
+    <source src="frozen.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+
+  <!-- Progress slider + time on same line -->
+  <div class="progress-container">
+    <input type="range" id="progress" min="0" max="100" value="0">
+    <div class="time-display">
+      <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button onclick="skip(-30)"><<</button>
+    <button onclick="skip(-10)"><</button>
+    <button onclick="playVideo()">Play</button>
+    <button onclick="pauseVideo()">Pause</button>
+    <button onclick="stopVideo()">Stop</button>
+    <button onclick="skip(10)">></button>
+    <button onclick="skip(30)">>></button>
+    <button onclick="toggleMute()">Mute</button>
+    <button onclick="goFullScreen()">Fullscreen</button>
+    <button onclick="toggleTheme()">Theme</button>
+  </div>
+
+  <div class="horizontal-sliders">
+    <div class="slider-box">
+      <label>Volume</label>
+      <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
+    </div>
+    <div class="slider-box">
+      <label>Speed</label>
+      <input type="range" id="speed" min="0.5" max="2" step="0.1" value="1">
+    </div>
+  </div>
+
+</div>
+
+<script>
+const video = document.getElementById("myVideo");
+const progress = document.getElementById("progress");
+const volume = document.getElementById("volume");
+const speed = document.getElementById("speed");
+const currentTimeDisplay = document.getElementById("currentTime");
+const durationDisplay = document.getElementById("duration");
+
+let isDark = true;
+
+function playVideo() 
+{ 
+    video.play(); 
+}
+
+function pauseVideo() 
+{ 
+    video.pause(); 
+}
+
+function stopVideo() 
+{
+    video.pause();           
+    video.currentTime = 0;    
+    progress.value = 0;   
+    currentTimeDisplay.innerText = "0:00"; 
+}
+
+
+function formatTime(time) 
+{
+    let minutes = Math.floor(time / 60);
+    let seconds = Math.floor(time % 60);
+    if (seconds < 10) { seconds = "0" + seconds; }
+    return minutes + ":" + seconds;
+}
+
+function skip(seconds) 
+{ 
+    video.currentTime += seconds; 
+}
+
+function toggleMute() 
+{ 
+    video.muted = !video.muted; 
+}
+
+function goFullScreen() 
+{ 
+    video.requestFullscreen(); 
+}
+
+function toggleTheme() 
+{
+    if (isDark) 
+    { 
+    document.body.style.background = "white"; document.body.style.color = "black"; 
+    } 
+    else 
+    { 
+        document.body.style.background = "#1e1e1e"; document.body.style.color = "white"; 
+    }
+    isDark = !isDark;
+}
+
+
+video.addEventListener("timeupdate", function () 
+{
+  let percent = (video.currentTime / video.duration) * 100;
+  progress.value = percent;
+  currentTimeDisplay.innerText = formatTime(video.currentTime);
+});
+
+progress.addEventListener("input", function () 
+{
+  video.currentTime = (progress.value / 100) * video.duration;
+});
+
+volume.addEventListener("input", function () 
+{ 
+    video.volume = volume.value; 
+});
+
+speed.addEventListener("input", function () 
+{ 
+    video.playbackRate = speed.value; 
+});
+
+
+video.addEventListener("ended", function()
+{ 
+    video.load(); 
+});
+
+document.addEventListener("keydown", function(e)
+{
+  switch(e.key)
+  {
+    case " ": e.preventDefault(); video.paused ? video.play() : video.pause(); break;
+    case "ArrowRight": video.currentTime += 10; break;
+    case "ArrowLeft": video.currentTime -= 10; break;
+    case "ArrowUp": video.volume = Math.min(video.volume + 0.1, 1); break;
+    case "ArrowDown": video.volume = Math.max(video.volume - 0.1, 0); break;
+  }
+});
+
+
+video.addEventListener("loadedmetadata", function () 
+{
+  durationDisplay.innerText = formatTime(video.duration);
+});
+
+
+</script>
+
+</body>
+</html>

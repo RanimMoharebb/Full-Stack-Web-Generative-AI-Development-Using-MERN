@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Theme Switcher</title>
+  <style>
+    .light { background-color: white; color: black; }
+    .dark { background-color: black; color: white; }
+    .blue { background-color: lightblue; color: darkblue; }
+    #content { padding: 20px; min-height: 200px; }
+  </style>
+</head>
+<body>
+  <div id="content">
+    <h1>Welcome</h1>
+    <p>This is a theme switcher demo.</p>
+  </div>
+  
+  <button id="lightBtn">Light Theme</button>
+  <button id="darkBtn">Dark Theme</button>
+  <button id="blueBtn">Blue Theme</button>
+  
+<script>
+    var content = document.getElementById("content");
+    var lightBtn = document.getElementById("lightBtn");
+    var darkBtn = document.getElementById("darkBtn");
+    var blueBtn = document.getElementById("blueBtn");
+
+    lightBtn.onclick = function () 
+    {
+        content.className = "light";
+    };
+
+    darkBtn.onclick = function () 
+    {
+        content.className = "dark";
+    };
+
+    blueBtn.onclick = function () 
+    {
+        content.className = "blue";
+    };
+</script>
+
+</body>
+</html>

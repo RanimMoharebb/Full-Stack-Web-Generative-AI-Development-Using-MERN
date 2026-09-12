@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RGB Text Controller</title>
+
+<style>
+body {
+  background-color: #1e1e1e;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.rgb-container {
+  width: 600px;
+  margin: auto;
+  background: #2c2c2c;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+
+input[type="range"] {
+  width: 100%;
+  margin: 15px 0;
+}
+
+#colorText {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  transition: color 0.3s ease; 
+}
+
+#rgbValue {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #ccc;
+}
+
+#resetBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: 20px;
+}
+
+#resetBtn:hover {
+  background-color: #666;
+}
+
+.color-button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  transition: transform 0.2s;
+}
+
+.color-button:hover {
+  transform: scale(1.1);
+}
+</style>
+</head>
+
+<body>
+
+<div class="rgb-container">
+
+  <h2>RGB Text Controller</h2>
+  <p id="colorText">Move the sliders to change my color!</p>
+    <p id="rgbValue">RGB(255, 255, 255)</p>
+
+  <label>Red</label>
+  <input type="range" id="red" min="0" max="255" value="255">
+
+  <label>Green</label>
+  <input type="range" id="green" min="0" max="255" value="255">
+
+  <label>Blue</label>
+  <input type="range" id="blue" min="0" max="255" value="255">
+
+  <br>
+  <button id="resetBtn">Reset</button>
+
+  <div id="presetColors">
+    <button class="color-button" style="background-color: pink;" data-r="255" data-g="192" data-b="203">Pink</button>
+    <button class="color-button" style="background-color: purple;" data-r="128" data-g="0" data-b="128">Purple</button>
+    <button class="color-button" style="background-color: grey;" data-r="128" data-g="128" data-b="128">Grey</button>
+    <button class="color-button" style="background-color: orange;" data-r="255" data-g="165" data-b="0">Orange</button>
+    <button class="color-button" style="background-color: rgb(255, 255, 0);" data-r="255" data-g="255" data-b="0">Yellow</button>
+    <button class="color-button" style="background-color: lime;" data-r="0" data-g="255" data-b="0">Lime</button>
+  </div>
+
+</div>
+
+<script>
+const redSlider = document.getElementById("red");
+const greenSlider = document.getElementById("green");
+const blueSlider = document.getElementById("blue");
+const colorText = document.getElementById("colorText");
+const rgbValue = document.getElementById("rgbValue");
+const resetBtn = document.getElementById("resetBtn");
+const presetButtons = document.querySelectorAll(".color-button");
+
+function updateColor() 
+{
+  let r = redSlider.value;
+  let g = greenSlider.value;
+  let b = blueSlider.value;
+
+  colorText.style.color = `rgb(${r},${g},${b})`;
+  rgbValue.textContent = `RGB(${r}, ${g}, ${b})`;
+}
+
+redSlider.addEventListener("input", updateColor);
+greenSlider.addEventListener("input", updateColor);
+blueSlider.addEventListener("input", updateColor);
+
+resetBtn.addEventListener("click", () => 
+{
+  redSlider.value = 255;
+  greenSlider.value = 255;
+  blueSlider.value = 255;
+  updateColor();
+});
+
+presetButtons.forEach(btn => 
+{
+  btn.addEventListener("click", () => 
+  {
+    const r = btn.getAttribute("data-r");
+    const g = btn.getAttribute("data-g");
+    const b = btn.getAttribute("data-b");
+
+    redSlider.value = r;
+    greenSlider.value = g;
+    blueSlider.value = b;
+
+    updateColor();
+  });
+});
+
+updateColor();
+</script>
+
+</body>
+</html>

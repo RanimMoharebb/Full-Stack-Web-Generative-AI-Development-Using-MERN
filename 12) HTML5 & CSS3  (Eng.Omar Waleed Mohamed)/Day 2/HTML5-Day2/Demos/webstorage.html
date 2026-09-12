@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="cookie.js"></script>
+
+    <!-- shim or shiv => js file -->
+    <!-- polyfill -> js file -> implement new unsupported api -->
+    <!-- script loader -> conditionizer.js library -->
+    <!-- Modernizr.js => library -->
+    <!-- api = obj.prop.methods -->
+    <!-- localStorage == undefined -->
+    <script>
+      // string
+      // httpOnly
+      // 2 types
+      // (1) session cookie => memory , deleted when browser closes (window) , No Expire
+      // (2) persisitent cookie => disk , restart broswer , expire date
+      //   document.cookie = "name=khaled;";
+      let date = new Date();
+      date.setMonth(6);
+      // document.cookie = "age = 30 ; expires =" + date;
+      document.cookie = "age = 30 ; max-age = 10000000";
+      // 2026-06-20T02:43:19.113Z
+      // 2026-07-24T10:51:45.000Z
+
+      // webstorage api = props , methods
+      // clear()
+      // setItem()
+      // getItem()
+      // removeItem()
+      // length
+
+      //localStorage; // always exits to infinity
+      //sessionStorage; // per tap // each tap has it;s own sessionStorage
+
+      //   localStorage.setItem("name", "hamada");
+      //   sessionStorage.setItem("counter", 0);
+      let namegg = "name";
+      console.log(localStorage.getItem(namegg));
+      let obj = {
+        name: "ali",
+        age: 40,
+      };
+      console.log(obj.toString());
+      //   localStorage.setItem("obj", JSON.stringify(obj));
+      console.log(JSON.parse(localStorage.getItem("obj")));
+    </script>
+  </body>
+</html>

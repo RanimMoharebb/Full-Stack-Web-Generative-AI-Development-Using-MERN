@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Demo</title>
+    <style>
+      h1 {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <video
+      id="vid"
+      src="./video/frozen.mp4"
+      poster="./image/frozen.jpg"
+      width="600"
+    ></video>
+    <!-- <video
+      src="./video/frozen.mp4"
+      controls
+      autoplay
+      muted
+      loop
+      poster="./image/frozen.jpg"
+      width="600"
+    ></video> -->
+
+    <h1>shadow dom</h1>
+    <div id="div1"></div>
+
+    <script>
+      //   const vid = document.getElementById("vid");
+      //    obj => js api => represent api
+      const d1 = document.getElementById("div1");
+      d1.attachShadow({
+        mode: "open",
+      }).innerHTML = `
+        <h1 id="hh">this is h1 in shado dom</h1>
+      `;
+    </script>
+  </body>
+</html>

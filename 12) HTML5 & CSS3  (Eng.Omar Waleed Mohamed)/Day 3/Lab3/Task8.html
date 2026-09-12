@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&family=Goudy+Bookletter+1911&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body {
+
+  text-transform: uppercase;
+}
+.shape{
+   transform: rotate(180deg);
+   position: absolute;
+   right:130px;
+    top:240px;
+    
+}
+.heart {
+  background-color: black;
+  display: inline-block;
+  height: 30px;
+  margin: 0 10px;
+  position: relative;
+  top: 0;
+  transform: rotate(-45deg);
+  width: 30px;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  background-color: black;
+  border-radius: 50%;
+  height: 30px;
+  position: absolute;
+  width: 30px;
+}
+
+.heart:before {
+  top: -15px;
+  left: 0;
+}
+
+.heart:after {
+  left: 15px;
+  top: 0;
+}
+
+.tale{
+  width: 0; 
+  height: 0; 
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 20px solid black;
+  transform: rotate(45deg);
+  position:absolute;
+  bottom:20px;
+  right:-3px
+}
+
+        .frame{
+            position: relative;
+            width:300px;
+            height: 500px;
+            border:5px solid rgb(226, 30, 30);
+            border-radius: 20px;
+        }
+        p{
+              font-family: "Goudy Bookletter 1911", serif;
+             font-weight: 400;
+             font-style: normal;
+             font-size: 50px;
+            
+        }
+        .bottom{
+            position: absolute;
+            bottom: 0;
+            right:5px;
+             text-align: right;
+        }
+        .top{
+            position:absolute;
+            top:0;
+            left:5px;
+            text-align:left ;
+        }
+    </style>
+</head>
+<body>
+  <div class="frame">
+    <p class="top">A</p>
+    <div class="shape"><span class="heart"><span class="tale"></span></span></div>
+    <p class="bottom">A</p>
+  </div>  
+</body>
+</html>

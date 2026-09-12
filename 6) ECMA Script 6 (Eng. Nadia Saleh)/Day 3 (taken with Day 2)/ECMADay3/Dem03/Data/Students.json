@@ -1,0 +1,22 @@
+{
+    "Students": [
+        {
+            "id": 1,
+            "Name": "Nadia Ahmed"
+        },
+        {
+            "id": 2,
+            "Name": "Khaled Yasser"
+        }
+    ],
+    "Users": [
+        {
+            "id": 2,
+            "LogIn": "Mohamed Ali"
+        },
+        {
+            "id": 3,
+            "LogIn": "Ali Wael"
+        }
+    ]
+}

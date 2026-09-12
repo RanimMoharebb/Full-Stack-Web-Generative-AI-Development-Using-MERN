@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>demo day2</title>
+  </head>
+  <body>
+    <!-- intrinsic size -->
+    <!-- <meter value="50"></meter> -->
+
+    <!-- 50,65454  - 13,54454 => 0  => 30 sec   => (cached) -->
+    <!-- 50,6545  - 13,54454 => 60  => 30 sec -->
+    <!-- 50,6545  - 13,54454 => 60  => 30 sec -->
+
+    <!-- <input type="button" value="getlocation" id="btnloc" /> -->
+    <script>
+    //   document.getElementById("btnloc").addEventListener("click", function () {
+    //     navigator.geolocation.getCurrentPosition(
+    //       function (pos) {
+    //         //success
+    //         console.log(pos);
+    //         console.log(pos.coords);
+    //         console.log(pos.coords.latitude);
+    //         console.log(pos.coords.longitude);
+    //         location.assign(
+    //           `https://www.google.com/maps?q=${pos.coords.latitude},${pos.coords.longitude}`,
+    //         );
+    //         // location.replace();
+    //       },
+    //       function (err) {
+    //         //error
+    //         console.log("code", err.code);
+    //         console.log("message", err.message);
+    //         console.log("ERMISSION_DENIED", err.PERMISSION_DENIED); // 1
+    //         console.log("POSITION_UNAVAILABLE", err.POSITION_UNAVAILABLE); // 2
+    //         console.log("TIMEOUT", err.TIMEOUT); // 3
+
+    //         switch (err.code) {
+    //           case 0:
+    //             console.log("UNKOWN ERROR");
+    //             break;
+    //           case 1:
+    //             console.log("PERMISSION_DENIED");
+    //             break;
+    //           case 2:
+    //             console.log("POSITION_UNAVAILABLE");
+    //             break;
+    //           case 3:
+    //             console.log("TIMEOUT");
+    //             break;
+    //         }
+    //       },
+    //       {
+    //         enableHighAccuracy: true,
+    //         timeout: 1000 * 60 * 1, //default
+    //         maximumAge: 1000 * 60 * 1,
+    //       },
+    //     );
+    //   });
+
+      //   const watcherID = navigator.geolocation.watchPosition(
+      //     function (pos) {
+      //       //success
+      //       console.log(pos);
+      //       console.log(pos.coords);
+      //       console.log(pos.coords.latitude);
+      //       console.log(pos.coords.longitude);
+      //     },
+      //     function (err) {
+      //       //error
+      //       console.log("code", err.code);
+      //       console.log("message", err.message);
+      //       console.log("ERMISSION_DENIED", err.PERMISSION_DENIED); // 1
+      //       console.log("POSITION_UNAVAILABLE", err.POSITION_UNAVAILABLE); // 2
+      //       console.log("TIMEOUT", err.TIMEOUT); // 3
+
+      //       switch (err.code) {
+      //         case 0:
+      //           console.log("UNKOWN ERROR");
+      //           break;
+      //         case 1:
+      //           console.log("PERMISSION_DENIED");
+      //           break;
+      //         case 2:
+      //           console.log("POSITION_UNAVAILABLE");
+      //           break;
+      //         case 3:
+      //           console.log("TIMEOUT");
+      //           navigator.geolocation.clearWatch(watcherID);
+      //           break;
+      //       }
+      //     },
+      //     {
+      //       enableHighAccuracy: true,
+      //       timeout: 1000 * 60 * 1, //default
+      //       maximumAge: 1000 * 60 * 1,
+      //     },
+      //   );
+    </script>
+  </body>
+</html>

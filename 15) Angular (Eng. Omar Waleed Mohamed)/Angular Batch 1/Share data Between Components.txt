@@ -1,0 +1,25 @@
+Share data Between Components 
+// Send Data from parent to child
+// 1. prepare property you want to send in parent
+// 2. prepare property that will receive the data in child
+// 3. on the child selector write [input property name in child]="parent property name"
+ 
+ 
+ 
+//=====================================================================
+//=====================================================================
+//=====================================================================
+ 
+ 
+// send data from child to parent
+// in child ts
+// 1. prepare output Property
+// 2. make function to emit the output property
+ 
+ 
+// in parent html
+// 1. on the child  selector (output property name in child )="function will receive data in parent ($event)"
+// in parent ts
+// 2. make function that receives data from type any then we can store it in any property
+ 
+ 

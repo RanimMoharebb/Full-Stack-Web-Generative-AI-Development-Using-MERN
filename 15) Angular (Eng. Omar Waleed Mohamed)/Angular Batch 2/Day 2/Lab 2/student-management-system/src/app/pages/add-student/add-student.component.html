@@ -1,0 +1,14 @@
+<h2>Add Student</h2>
+
+<form (ngSubmit)="addStudent()">
+
+  <input [(ngModel)]="student.firstName" name="firstName" placeholder="First Name">
+  <input [(ngModel)]="student.lastName" name="lastName" placeholder="Last Name">
+  <input [(ngModel)]="student.age" name="age" type="number" placeholder="Age">
+  <input [(ngModel)]="student.department" name="department" placeholder="Department">
+  <input [(ngModel)]="student.email" name="email" placeholder="Email">
+  <input [(ngModel)]="student.phone" name="phone" placeholder="Phone">
+  <input [(ngModel)]="student.GPA" name="GPA" type="number" placeholder="GPA">
+
+  <button type="submit">Add</button>
+</form>

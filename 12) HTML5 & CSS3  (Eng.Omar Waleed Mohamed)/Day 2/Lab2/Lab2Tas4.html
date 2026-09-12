@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Landscape</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #e6ffe6, #ccffcc);
+            margin: 0;
+            padding: 50px 0;
+        }
+
+        canvas {
+            border: 2px solid #333;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Landscape Gradient</h2>
+<canvas id="canvas4" width="500" height="400"></canvas>
+
+<script>
+var canvas = document.getElementById("canvas4");
+var ctx = canvas.getContext("2d");
+
+// vertical gradient for sky
+var sky = ctx.createLinearGradient(0, 0, 0, 200);
+sky.addColorStop(0, "#4db8ff");
+sky.addColorStop(1, "white");
+ctx.fillStyle = sky;
+ctx.fillRect(0, 0, 500, 200);
+
+// vertical gradient for Grass
+var grass = ctx.createLinearGradient(0, 200, 0, 400);
+grass.addColorStop(0, "#66cc00");
+grass.addColorStop(1, "white");
+ctx.fillStyle = grass;
+ctx.fillRect(0, 200, 500, 200);
+
+// Black Shape
+ctx.beginPath();
+ctx.moveTo(200, 250);    // bottom left
+ctx.lineTo(200, 150);    // vertical line up
+ctx.lineTo(320, 150);    // horizontal line across top
+ctx.lineTo(320, 250);    // vertical line down
+ctx.strokeStyle = "black";
+ctx.lineWidth = 3;
+ctx.stroke();
+</script>
+
+</body>
+</html>

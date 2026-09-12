@@ -1,0 +1,94 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333333;
+    top:0;
+    left:0;
+    min-width: 100%;
+    width: 100%;
+    position: sticky;
+    z-index: 20;
+}
+/* 
+position: fixed -> keeps the element always in the same place on the screen
+position: sticky -> lets the element scroll normally until it reaches a point (8albn btb2a el page top) then sticks in place
+*/
+
+
+/* without inline-block the list items will be vertical to each other not horizontal */
+ul li{
+    display: inline-block;
+}
+
+/* 
+display: inline -> The element stays in the same line with other elements and will not start a new line
+display: block -> The element starts on a new line and takes the full width of its container
+display: inline-block -> The element stays in the same line like inline, but we can set width and height like block
+*/
+
+ul li a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  background-color: #111111;
+}
+
+div{
+    padding-top: 2%;
+}
+
+.ws{
+    white-space: pre;
+
+}
+
+
+
+.image{
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    width: 50%;
+}
+.image img {
+    width: 100%;
+    display: block;
+}
+
+.Timage{
+    position: absolute;
+    z-index: 10;
+    background: pink;
+    bottom: 0;
+    right: 0;
+    display: block;
+    padding: 0%;
+}
+
+p, h2{
+    text-align: center;
+}
+
+
+
+.box{
+    background-color: antiquewhite;
+}
+
+.card{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+}
+
+.space{
+      white-space: normal;
+
+}
+
