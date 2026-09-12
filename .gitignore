@@ -5,3 +5,4 @@ build/
 .DS_Store
 # Local backup of nested Git repositories
 .git-backup/
+~$*
